@@ -1,0 +1,272 @@
+<resources>
+    <string name="app_name">艺龙驴友</string>
+    <string name="title_activity_main_tabs">MainTabsActivity</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login_webview">LoginWebviewActivity</string>
+
+    <!--通用-->
+    <string name="network_disable">网络不可用</string>
+    <string name="cancel">取消</string>
+    <string name="loading">加载中，请稍后…</string>
+    <string name="common_tips">提示</string>
+    <string name="common_yes">是</string>
+    <string name="common_no">否</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_go_2_login">去登录</string>
+    <string name="common_modify">修改</string>
+    <string name="common_confirm">确定</string>
+    <string name="common_save">保存</string>
+    <string name="common_my">我的</string>
+    <string name="somebodys_format">%1$s的%2$s</string>
+    <string name="camera">相机</string>
+    <string name="login">登录</string>
+    <string name="elong_login">艺龙会员登录</string>
+    <string name="login_succeed">登录成功</string>
+    <string name="login_failed">登录失败</string>
+    <string name="search_no_result">没有搜索到目的地</string>
+    <string name="dlg_message_user_info_incomplete">资料都木有完整，肿么让别人相信你？</string>
+    <string name="go_2_complete">去完善</string>
+    <string name="dlg_title_change_env">更改环境</string>
+    <string name="dlg_not_login_message">您尚未登录，不能进行此项操作，需要去登录吗？</string>
+
+    <!--首页-->
+    <string name="tp_m_title">首页</string>
+    <string name="tp_m_search_text">搜索&#160;地点&#160;景区</string>
+    <string name="tp_m_hot_dest">热门目的地</string>
+
+    <!--消息-->
+    <string name="tp_msg_title">消息</string>
+
+    <!--个人中心：我的/别人的-->
+    <string name="tp_my_title">我的</string>
+    <string name="fpc_btn_login_text">注册/登录</string>
+    <string name="fpc_item_content_personal_info">我的资料</string>
+    <string name="fpc_item_content_personal_posts">我的发帖</string>
+    <string name="fpc_item_content_personal_joined">我的求同行</string>
+    <string name="fpc_item_settings">设置</string>
+    <string name="title_activity_page_list">PageListActivity</string>
+    <string name="fpc_item_content_personal_posts_others">他的发帖</string>
+    <string name="pc_title">个人中心</string>
+
+    <!--帖子列表-->
+    <string name="pi_contact_info_format">%1$s  %2$s</string>
+    <string name="pi_contact_info_type_qq">QQ</string>
+    <string name="pi_contact_info_type_wechat">微信</string>
+    <string name="pi_contact_info_type_phone">电话</string>
+    <string name="pi_wanna_join_num_format">求同行 %s</string>
+    <string name="pi_go_2_format">%s</string>
+    <string name="pi_uv_format">浏览 %s</string>
+    <string name="pi_duration_format">%1$s出发（共%2$s天）</string>
+    <string name="pi_dest_left">行程：</string>
+    <string name="pi_duration_left">时间：</string>
+    <string name="pi_btn_text_wanna_join">求同行</string>
+    <string name="pi_btn_text_wanna_join_cancel">已约行</string>
+    <string name="pl_title_my_posts">我的发帖</string>
+    <string name="pl_empty_view_text">这里还没有帖子</string>
+    <string name="pl_empty_view_text_my">空空如也</string>
+    <string name="pi_cancel_wanna_join_dialog_content">真的不想一起同行了吗？</string>
+    <string name="pl_title_other_posts_format">%s的发帖</string>
+    <string name="pi_delete_text">删除</string>
+    <string name="pl_delete_succeed">删除成功</string>
+    <string name="pl_delete_failed">删除失败</string>
+    <string name="pl_toast_deleting">正在删除帖子...</string>
+    <string name="pl_delete_post_dialog_content">确定要删除这个帖子吗？</string>
+    <string name="pl_title_my_joined_posts">我的求同行</string>
+    <string name="pl_title_others_joined_posts_format">%s的求同行</string>
+
+    <!--发帖页-->
+    <string name="posting_tour">找驴友</string>
+    <string name="posting_maint_title">发帖</string>
+    <string name="posting_maint_finish">完成</string>
+    <string name="posting_main_tour">行程</string>
+    <string name="posting_main_des">目的地</string>
+    <string name="posting_main_des_hit">目的地（多个以空格隔开）</string>
+    <string name="posting_main_start_time">出发</string>
+    <string name="posting_main_end_time">结束</string>
+    <string name="posting_main_date">%1$d月%2$d日</string>
+    <string name="posting_main_tag">旅行标签</string>
+    <string name="posting_main_tag_tip">（最多选择3个标签）</string>
+    <string name="posting_main_above_max_tag_select">最多只能选择3个标签哦</string>
+    <string name="posting_main_contact">联系方式</string>
+    <string name="posting_main_contact_tip">（最少填写一个联系方式）</string>
+    <string name="posting_main_wechat_hit">微信</string>
+    <string name="posting_main_qq_hit">QQ</string>
+    <string name="posting_main_phone_hit">手机</string>
+    <string name="posting_main_detail_hit">在此输入行程计划...</string>
+    <string name="posting_preview_select">选择</string>
+    <string name="posting_maint_album">相册</string>
+    <string name="posting_main_error_no_destination">请输入目的地</string>
+    <string name="posting_main_error_no_start_or_end_time">请输入出发和结束时间</string>
+    <string name="posting_main_error_invalid_time">您输入的时间不合法</string>
+    <string name="posting_main_error_no_select_tag">请至少输入一个标签</string>
+    <string name="posting_main_error_no_contact">请至少输入一种联系方式</string>
+    <string name="posting_main_error_no_detail">请输入旅行计划详情</string>
+    <string name="posting_main_is_posting">正在发布旅行计划</string>
+    <string name="posting_main_post_fail">发布旅行计划失败</string>
+    <string name="posting_send">发送</string>
+    <string name="posting_max_photo_select">最多选择3张图片</string>
+    <string name="posting_main_exit_tip">发帖还未完成，确定要离开吗？</string>
+
+    <!--发帖页目的地搜索输入-->
+    <string name="select_edit_search">目的地</string>
+
+    <!--日期-->
+    <string name="posting_calendar_start_title">选择出发日期</string>
+    <string name="posting_calendar_end_title">选择结束日期</string>
+    <string name="posting_calendar_select_today_before">请选择今天以后时间</string>
+    
+    <!--消息列表页-->
+    <string name="wanna_go_to">想和你一起去%s</string>
+    <string name="mi_empty_contact_info">未填写</string>
+    <string name="fm_empty_view_text">还没消息，快去约！</string>
+    <string name="fm_empty_view_text_not_login_yet">尚未登录</string>
+    <string name="dlg_item_copy_wechat">复制微信号</string>
+    <string name="dlg_item_copy_qq">复制QQ号</string>
+    <string name="dlg_item_dial">拨打电话</string>
+
+    <!--设置页面-->
+    <string name="settings_title">设置</string>
+    <string name="settings_msg_voice">消息提示音</string>
+    <string name="settings_msg_vibration">消息震动</string>
+    <string name="settings_msg_push">推送开关</string>
+    <string name="settings_msg_about">关于我们</string>
+    <string name="settings_msg_check_update">检查更新</string>
+    <string name="settings_msg_feedback">意见反馈</string>
+    <string name="settings_msg_logout">退出登录</string>
+    <string name="update_already_new">已经是最新版本</string>
+    <string name="update_version_title">更新</string>
+    <string name="update_version_info">有更新版本发布啦，更好更完善的驴友平台，快快升级吧！</string>
+    <string name="update_ok_btn">更新</string>
+    <string name="update_later_btn">暂不</string>
+    <string name="update_loading_title">下载</string>
+    <string name="update_loading_cancel">取消下载</string>
+    <string name="update_downloading">正在下载更新...%s</string>
+    <string name="logout_confirm_dialog_message">确定要退出登录吗？</string>
+    <string name="user_center_uploading_avatar">正在上传头像…</string>
+    <string name="user_center_upload_avatar_success">上传头像成功！</string>
+    <string name="user_center_upload_avatar_fail">上传头像失败！</string>
+
+
+    <!--编辑资料页面-->
+    <string name="eui_title">我的资料</string>
+    <string name="eui_tips_at_least_on_contact_info">请至少输入一种联系方式</string>
+    <string name="eui_tips_empty_nick_name">昵称不能为空</string>
+    <string name="eui_tips_empty_nick_age">年龄不能为空</string>
+    <string name="eui_avatar">头像</string>
+    <string name="eui_nick_name">昵称</string>
+    <string name="eui_sex">性别</string>
+    <string name="eui_age">年龄</string>
+    <string name="eui_contact_info">联系方式</string>
+    <string name="eui_wechat">微信</string>
+    <string name="eui_qq">QQ</string>
+    <string name="eui_phone">手机</string>
+    <string name="eui_et_hint">未填写</string>
+    <string name="toast_saving_in_progress">正在保存资料，请稍等</string>
+    <string name="eui_msg_save_tips">是否保存已修改的资料</string>
+    <string name="eui_dialog_title_choose_sex">选择性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+    <!--关于页面-->
+    <string name="about_title">关于</string>
+    <string name="about_welcome">欢迎关注我们</string>
+    <string name="about_wechat">微信公众号：tripfriends</string>
+    <string name="about_wechat_id">tripfriends</string>
+    <string name="about_weibo">新浪微博：艺龙驴友</string>
+    <string name="about_weibo_id">艺龙驴友</string>
+    <string name="about_copy_done">复制成功</string>
+
+    <!--反馈页面-->
+    <string name="feedback_qq">QQ</string>
+    <string name="feedback_phone">手机</string>
+    <string name="feedback_email">邮箱</string>
+    <string name="feedback_content_hint">请留下您的意见和反馈</string>
+    <string name="feedback_title">意见反馈</string>
+    <string name="feedback_send">发送</string>
+    <string name="feedback_uploading">正在努力发送中...</string>
+    <string name="feedback_success">反馈发送成功</string>
+    <string name="feedback_toast_empty_content">请填写反馈内容</string>
+    <string name="feedback_fans_qq_qun">意见反馈QQ群:454855083</string>
+
+    <!--分享-->
+    <string name="share_wechat_no_installed">您手机还没安装微信，暂不支持微信分享！</string>
+    <string name="share_wechat_tileline_no_support">您安装的微信版本过低，不支持朋友圈分享！</string>
+    <string name="share_wechat">微信</string>
+    <string name="share_wechat_timeline">朋友圈</string>
+    <string name="share_QQ">QQ</string>
+    <string name="share_Qzone">QQ空间</string>
+    <string name="share_weibo">微博</string>
+
+    <!--求同行的页面-->
+    <string name="wanna_join_list_title">同行小组</string>
+    <string name="wanna_join_list_empty_text">还没有求同行的人哦</string>
+    <string name="wanna_join_list_loading">正在加载中...</string>
+    <string name="wanna_join_dest_format">同行目的地：%s</string>
+    <string name="wanna_join_list_item_contact_info_hide">未公开联系方式</string>
+
+    <!--帖子详情-->
+    <string name="pd_title">帖子详情</string>
+    <string name="pd_tags_left">标签：</string>
+    <string name="pd_contacts_left">联系：</string>
+    <string name="pd_tips_contact_info_not_in_wanna_join_state">求同行后可见</string>
+    <string name="pd_wanna_join">求同行</string>
+    <string name="pd_cancel_wanna_join">已约行</string>
+    <string name="pd_share">分享</string>
+    <string name="pd_wanna_join_group_title_format">同行小组（%s人）</string>
+    <string name="pd_menu_close_post">关闭帖子</string>
+    <string name="pd_menu_delete_post">删除帖子</string>
+    <string name="pd_menu_report_post">举报帖子</string>
+    <string name="pd_empty_followers">还没有人求同行</string>
+    <string name="pd_report_succeed">举报成功</string>
+    <string name="pd_join_tips_dlg_message">你的联系方式会展示给求同行的人哦</string>
+    <string name="pd_toast_join_before_view_join_group">求同行后才能查看同行小组</string>
+
+    <!--编辑某项的页面 EditSpecItemActivity-->
+    <string name="esi_title_nick_name">修改昵称</string>
+    <string name="esi_title_age">修改年龄</string>
+
+    <!--编辑联系方式页面-->
+    <string name="eci_title">修改联系方式</string>
+    <string name="eci_contact_info">联系方式</string>
+    <string name="eci_privacy">隐私策略</string>
+    <string name="eci_title_contact_info_hint">(请至少填写一项)</string>
+    <string name="eci_wechat">微信</string>
+    <string name="eci_qq">QQ</string>
+    <string name="eci_phone">手机</string>
+    <string name="eci_privacy_wechat_title">向发帖人公开微信</string>
+    <string name="eci_privacy_qq_title">向发帖人公开QQ</string>
+    <string name="eci_privacy_phone_title">向发帖人公开手机</string>
+    <string name="eci_privacy_share_with_group_title">向同行小组开放联系方式</string>
+    <string name="eci_privacy_share_with_group_hint">向发帖人求同行后，你会加入Ta的同行小组。同行小组内的成员均是想和Ta同行的人。</string>
+    <string name="eci_contact_info_hint">向发帖人求同行后，需向Ta公开至少一种联系方式，以供联系。</string>
+    <string name="eci_empty_info">未填写</string>
+    <string name="eci_toast_at_least_one_info">请至少输入一种联系方式</string>
+    <string name="eci_toast_at_least_check_one_info">至少要公开一种联系方式哟</string>
+    <string name="eci_toast_privacy_at_least_one_info">请至少公开一种联系方式</string>
+    <string name="eci_toast_enter_wechat_before_check">输入微信后，才能开启哦</string>
+    <string name="eci_toast_enter_qq_before_check">输入QQ后，才能开启哦</string>
+    <string name="eci_toast_enter_phone_before_check">输入手机后，才能开启哦</string>
+
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_edit_user_info">EditUserInfoActivity</string>
+    <string name="title_activity_personal_center">PersonalCenterActivity</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="title_activity_wanna_join_list">WannaJoinListActivity</string>
+    <string name="title_activity_post_detail">PostDetailActivity</string>
+    <string name="title_activity_edit_spec_item">EditSpecItemActivity</string>
+    <string name="title_activity_edit_contact_info">EditContactInfoActivity</string>
+
+</resources>

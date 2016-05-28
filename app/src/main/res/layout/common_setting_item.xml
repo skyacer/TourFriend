@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_clickable_bg"
+    android:descendantFocusability="blocksDescendants">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/csi_divider_top"
+        android:background="@color/csi_divider"
+        android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:id="@+id/csi_rl_first_line">
+
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="fill_parent"
+            android:scaleType="center"
+            android:id="@+id/csi_iv_icon_left"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/csi_tv_content"
+            android:gravity="center_vertical|start"
+            android:textSize="16dp"
+            android:textColor="@color/csi_content_text"
+            android:layout_toRightOf="@+id/csi_iv_icon_left"
+            android:layout_toEndOf="@+id/csi_iv_icon_left"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/csi_tv_right"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp"
+            android:layout_toLeftOf="@+id/csi_iv_icon_right"
+            android:textColor="@color/csi_content_text"
+            android:textColorHint="@color/csi_hint"
+            android:textSize="16dp"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="center"
+            android:layout_marginRight="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/csi_iv_icon_right"/>
+
+        <CheckBox
+            android:layout_width="59dp"
+            android:layout_height="23dp"
+            android:id="@+id/csi_rbtn_switch_right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="13dp"
+            android:button="@null"
+            android:background="@drawable/setting_radio_btn_bg"
+            android:visibility="gone"/>
+
+        <com.elong.tourpal.imageasyncloader.view.CustomImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:id="@+id/csi_civ_right"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="14dp"
+            android:scaleType="center"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/csi_tv_second_line"
+        android:gravity="center_vertical"
+        android:paddingLeft="18dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="18dp"
+        android:layout_below="@+id/csi_rl_first_line"
+        android:textSize="14dp"
+        android:textColor="@color/csi_second_line_text"
+        android:singleLine="false"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/csi_divider_full"
+        android:layout_below="@+id/csi_tv_second_line"
+        android:background="@color/csi_divider"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/csi_tv_second_line"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        android:id="@+id/csi_divider_part"
+        android:background="@color/csi_divider"/>
+
+</RelativeLayout>

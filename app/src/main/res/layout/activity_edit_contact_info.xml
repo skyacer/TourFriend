@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.EditContactInfoActivity"
+    android:background="@color/pi_divider_padding_bg">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="42dp"
+                android:id="@+id/eci_rl_title_contact_info"
+                android:background="@color/pi_divider_padding_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eci_tv_title_contact_info"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/cti_text"
+                    android:text="@string/eci_contact_info"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/eci_tv_title_contact_info"
+                    android:layout_alignTop="@+id/eci_tv_title_contact_info"
+                    android:text="@string/eci_title_contact_info_hint"
+                    android:textSize="14dp"
+                    android:textColor="@color/eci_title_hint"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/pi_divider_line"/>
+
+            </RelativeLayout>
+
+            <com.elong.tourpal.ui.views.CommonEditableItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_cei_wechat"
+                android:layout_below="@+id/eci_rl_title_contact_info"/>
+
+            <com.elong.tourpal.ui.views.CommonEditableItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_cei_qq"
+                android:layout_below="@+id/eci_cei_wechat"/>
+
+            <com.elong.tourpal.ui.views.CommonEditableItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_cei_phone"
+                android:layout_below="@+id/eci_cei_qq"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="42dp"
+                android:id="@+id/eci_rl_title_privacy"
+                android:layout_below="@+id/eci_cei_phone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eci_tv_title_privacy"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/cti_text"
+                    android:text="@string/eci_privacy"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/pi_divider_line"/>
+
+            </RelativeLayout>
+
+            <com.elong.tourpal.ui.views.CommonSettingItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_csi_privacy_wechat"
+                android:layout_below="@+id/eci_rl_title_privacy"/>
+
+            <com.elong.tourpal.ui.views.CommonSettingItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_csi_privacy_qq"
+                android:layout_below="@+id/eci_csi_privacy_wechat"/>
+
+            <com.elong.tourpal.ui.views.CommonSettingItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_csi_privacy_phone"
+                android:layout_below="@+id/eci_csi_privacy_qq"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:background="@color/pi_divider_padding_bg"
+                android:layout_below="@+id/eci_csi_privacy_phone"/>
+
+            <com.elong.tourpal.ui.views.CommonSettingItem
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eci_csi_privacy_share_with_group"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/eci_csi_privacy_phone"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:background="@color/pi_divider_padding_bg"
+                android:layout_below="@+id/eci_csi_privacy_share_with_group"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+    
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fpc_bg">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="159dp"
+        android:id="@+id/fpc_top_panel"
+        android:background="@mipmap/personal_center_top_bg">
+
+        <com.elong.tourpal.imageasyncloader.view.CustomImageView
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:id="@+id/fpc_iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/avatar_white_bg"
+            android:padding="3dp"
+            android:layout_marginTop="25dp"/>
+
+        <Button
+            android:layout_width="96dp"
+            android:layout_height="33dp"
+            android:gravity="center"
+            android:textColor="@color/fpc_btn_login_text"
+            android:text="@string/fpc_btn_login_text"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/fpc_iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/btn_login_bg"
+            android:id="@+id/fpc_btn_login"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fpc_ll_user_info"
+            android:layout_below="@+id/fpc_iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fpc_tv_nick_name"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/fpc_tv_sex_and_age"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginLeft="9dp"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/fpc_tv_nick_name"
+                android:background="@drawable/bg_female"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:drawableLeft="@mipmap/ic_female"
+                android:drawablePadding="3dp"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/fpc_top_panel"
+        android:layout_marginTop="16dp">
+
+        <com.elong.tourpal.ui.views.CommonSettingItem
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fpc_item_personal_info"/>
+
+        <com.elong.tourpal.ui.views.CommonSettingItem
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fpc_item_personal_posts"
+            android:layout_below="@+id/fpc_item_personal_info"/>
+
+        <com.elong.tourpal.ui.views.CommonSettingItem
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fpc_item_personal_joined"
+            android:layout_below="@+id/fpc_item_personal_posts"/>
+
+        <com.elong.tourpal.ui.views.CommonSettingItem
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fpc_item_settings"
+            android:layout_below="@+id/fpc_item_personal_joined"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

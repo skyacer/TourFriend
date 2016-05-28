@@ -1,0 +1,457 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pi_divider_padding_bg"
+    tools:context="com.elong.tourpal.ui.activities.PostDetailActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/pd_rl_bottom_buttons"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <RelativeLayout
+                android:id="@+id/pd_rl_divider_top"
+                android:layout_width="fill_parent"
+                android:layout_height="13dp"
+                android:background="@color/pi_divider_padding_bg">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/pi_divider_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pd_rl_post_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pd_rl_divider_top"
+                android:background="@color/white"
+                android:paddingBottom="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/pd_rl_top"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp">
+
+                    <com.elong.tourpal.imageasyncloader.view.CustomImageView
+                        android:id="@+id/pd_iv_avatar"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="14dp"
+                        android:src="@android:drawable/ic_menu_report_image" />
+
+                    <TextView
+                        android:id="@+id/pd_tv_nick_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_toRightOf="@+id/pd_iv_avatar"
+                        android:ellipsize="end"
+                        android:gravity="left"
+                        android:maxWidth="180dp"
+                        android:singleLine="true"
+                        android:textColor="@color/pi_nick_name"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/pd_tv_sex_and_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_alignTop="@+id/pd_tv_nick_name"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/pd_tv_nick_name"
+                        android:background="@drawable/bg_female"
+                        android:drawableLeft="@mipmap/ic_female"
+                        android:drawablePadding="3dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/pd_tv_create_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/pd_iv_avatar"
+                        android:layout_alignLeft="@+id/pd_tv_nick_name"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/pi_create_time"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/pd_iv_status"
+                        android:layout_width="91dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="16dp"
+                        android:src="@mipmap/ic_post_status_recruiting" />
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/pd_iv_wanna_join"-->
+                    <!--android:layout_width="89dp"-->
+                    <!--android:layout_height="36dp"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/bg_btn_wanna_join" />-->
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/pd_iv_dest"
+                    android:layout_width="16dp"
+                    android:layout_height="17dp"
+                    android:layout_below="@+id/pd_rl_top"
+                    android:layout_marginLeft="18dp"
+                    android:src="@mipmap/ic_destination" />
+
+                <TextView
+                    android:id="@+id/pd_tv_dest_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/pd_iv_dest"
+                    android:layout_marginTop="-1dp"
+                    android:layout_toRightOf="@+id/pd_iv_dest"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:text="@string/pi_dest_left"
+                    android:textColor="@color/pi_tv_dest_left"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/pd_tv_dest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/pd_tv_dest_left"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/pd_tv_dest_left"
+                    android:gravity="center_vertical"
+                    android:minHeight="16dp"
+                    android:singleLine="false"
+                    android:textColor="@color/pi_duration_destination"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/pd_iv_duration"
+                    android:layout_width="16dp"
+                    android:layout_height="17dp"
+                    android:layout_alignLeft="@+id/pd_iv_dest"
+                    android:layout_below="@+id/pd_tv_dest"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/pd_tv_duration_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/pd_iv_duration"
+                    android:layout_marginTop="-1dp"
+                    android:layout_toRightOf="@+id/pd_iv_duration"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:text="@string/pi_duration_left"
+                    android:textColor="@color/pi_tv_dest_left"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/pd_tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/pd_tv_duration_left"
+                    android:layout_alignTop="@+id/pd_tv_duration_left"
+                    android:layout_toRightOf="@+id/pd_tv_duration_left"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/pi_duration_destination"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pd_rl_tags"
+                    android:layout_alignLeft="@+id/pd_iv_duration"
+                    android:layout_below="@+id/pd_iv_duration">
+
+                    <ImageView
+                        android:id="@+id/pd_iv_tags"
+                        android:layout_width="16dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@mipmap/ic_tag" />
+
+                    <TextView
+                        android:id="@+id/pd_tv_tags_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/pd_iv_tags"
+                        android:layout_marginTop="-1dp"
+                        android:layout_toRightOf="@+id/pd_iv_tags"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:text="@string/pd_tags_left"
+                        android:textColor="@color/pi_tv_dest_left"
+                        android:textSize="14dp" />
+
+                    <com.elong.tourpal.ui.views.TagsContainer
+                        android:id="@+id/pd_tc_tags"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/pd_tv_tags_left"
+                        android:layout_toRightOf="@+id/pd_tv_tags_left"
+                        android:minHeight="16dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/pd_iv_contact_info"
+                    android:layout_width="16dp"
+                    android:layout_height="17dp"
+                    android:layout_alignLeft="@+id/pd_rl_tags"
+                    android:layout_below="@+id/pd_rl_tags"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/ic_contact" />
+
+                <TextView
+                    android:id="@+id/pd_tv_contacts_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/pd_iv_contact_info"
+                    android:layout_marginTop="-1dp"
+                    android:layout_toRightOf="@+id/pd_iv_contact_info"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="13dp"
+                    android:text="@string/pd_contacts_left"
+                    android:textColor="@color/pi_tv_dest_left"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/pd_tv_contact_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/pd_tv_contacts_left"
+                    android:layout_toRightOf="@+id/pd_tv_contacts_left"
+                    android:background="@drawable/bg_contact_info_invisible"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="8dp"
+                    android:minHeight="16dp"
+                    android:singleLine="false"
+                    android:textColor="@color/pi_contact_info"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/pd_tv_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pd_tv_contact_info"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/pi_tv_content_bg"
+                    android:padding="10dp"
+                    android:singleLine="false"
+                    android:textColor="@color/pi_tv_content_text"
+                    android:textSize="14dp" />
+
+                <com.elong.tourpal.ui.views.RelativeGridLayout
+                    android:id="@+id/pd_rgl_imgs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pd_tv_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/pd_tv_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pd_rgl_imgs"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toLeftOf="@+id/pd_tv_uv"
+                    android:drawableLeft="@mipmap/ic_location"
+                    android:drawablePadding="6dp"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:singleLine="true"
+                    android:textColor="@color/pi_location"
+                    android:textSize="12dp" />
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/pd_tv_delete"-->
+                <!--android:layout_below="@+id/pd_rgl_imgs"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:layout_toRightOf="@+id/pd_tv_location"-->
+                <!--android:layout_toLeftOf="@+id/pd_tv_wanna_join_num"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_alignWithParentIfMissing="true"-->
+                <!--android:text="@string/pd_delete_text"-->
+                <!--android:textColor="@color/pi_delete"-->
+                <!--android:textSize="11dp"-->
+                <!--android:visibility="visible"/>-->
+
+                <TextView
+                    android:id="@+id/pd_tv_uv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/pd_rgl_imgs"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toLeftOf="@+id/pd_tv_wanna_join_num"
+                    android:gravity="right"
+                    android:textColor="@color/pi_tv_content_text"
+                    android:textSize="12dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pd_tv_wanna_join_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/pd_rgl_imgs"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/pi_tv_content_text"
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pd_ll_divider_wanna_join_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pd_rl_post_info"
+                android:background="@color/pi_divider_padding_bg"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/pd_tv_wanna_join_group_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="false"
+                    android:text="同行小组"
+                    android:textColor="@color/pi_tv_content_text"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/pi_divider_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pd_rl_wanna_join_group_empty"
+                android:layout_below="@+id/pd_ll_divider_wanna_join_group"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/pd_tv_wanna_join_group_empty"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:textColor="@color/pi_tv_content_text"
+                    android:text="@string/pd_empty_followers"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/pi_divider_line" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/pd_tv_wanna_join_group_empty"
+                    android:background="@color/pi_divider_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pd_rl_wanna_join_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pd_ll_divider_wanna_join_group"
+                android:layout_marginBottom="14dp"
+                android:visibility="gone">
+
+                <GridView
+                    android:id="@+id/pd_gv_wanna_join_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:columnWidth="44dp"
+                    android:horizontalSpacing="10dp"
+                    android:listSelector="@color/transparent"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="32dp"
+                    android:background="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="14dp"
+                    android:scaleType="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_right_arrow"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/pi_divider_line" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/pd_gv_wanna_join_group"
+                    android:background="@color/pi_divider_line" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/pd_rl_bottom_buttons"
+        layout="@layout/bottom_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

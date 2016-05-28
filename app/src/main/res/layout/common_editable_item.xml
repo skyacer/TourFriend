@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/cei_divider_top"
+        android:background="@color/csi_divider"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cei_tv_left"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="17dp"
+        android:textSize="16dp"
+        android:textColor="@color/cti_text"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/cei_et_right"
+        android:layout_marginLeft="93dp"
+        android:gravity="center_vertical"
+        android:layout_alignWithParentIfMissing="true"
+        android:textColorHint="@color/cti_hint"
+        android:textColor="@color/cti_text"
+        android:textSize="16dp"
+        android:background="@color/transparent"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/cei_divider_bottom_full"
+        android:background="@color/csi_divider"
+        android:layout_alignParentBottom="true"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:id="@+id/cei_divider_bottom_part"
+        android:background="@color/csi_divider"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

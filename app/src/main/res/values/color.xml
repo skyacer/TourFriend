@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="white_pressed">#f5f5f5</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_a1">#0f000000</color>
+    <color name="tourpal_red">#e85249</color>
+    <color name="tourpal_gray">#909090</color>
+    <color name="common_dialog_bg">#000000</color>
+
+    <!--通用-->
+    <color name="title_bg_gradient_start">#e24a4a</color>
+    <color name="title_bg_gradient_end">#f26048</color>
+    <color name="load_more_text">#a8a8a8</color>
+    <color name="common_gray_bg">#f8f8f8</color>
+    <color name="common_gray2_bg">#bebebe</color>
+
+    <!--tab Activity-->
+    <color name="tab_item_text_selected">#f05d48</color>
+    <color name="tab_item_text_normal">#9e9e9e</color>
+
+    <!--首页-->
+    <color name="tp_m_search_text">#bebebe</color>
+    <color name="tp_m_bg">#f8f8f8</color>
+    <color name="tp_m_text_hot_dest">#ff7458</color>
+    <color name="tp_m_tabs_separator">#c6c6c6</color>
+
+    <!--景点搜索页面-->
+    <color name="search_destination_item_bg_normal">#ffffff</color>
+    <color name="search_destination_item_bg_pressed">#e8f8ff</color>
+    <color name="search_destination_item_text">#767676</color>
+    <color name="search_destination_item_text_gray">#aaaaaa</color>
+
+    <!--帖子列表-->
+    <color name="pi_tv_content_bg">#f5f5f5</color>
+    <color name="pi_tv_content_text">#6d6d6d</color>
+    <color name="pi_divider_padding_bg">#f8f8f8</color>
+    <color name="pi_divider_line">#d0d0d0</color>
+    <color name="pi_nick_name">#4f4f4f</color>
+    <color name="pi_create_time">#a2a2a2</color>
+    <color name="pi_duration_destination">#363636</color>
+    <color name="pi_contact_info_hide">#969696</color>
+    <color name="pi_contact_info">#363636</color>
+    <color name="pi_location">#a2a2a2</color>
+    <color name="pi_delete">#ef6e6a</color>
+    <color name="pi_tv_wanna_join_num">#3cd9e2</color>
+    <color name="pi_tv_dest_left">#8e8e8e</color>
+    <color name="pi_btn_wanna_join_normal_bg">#3dc9e2</color>
+    <color name="pi_btn_wanna_join_pressed_bg">#129bb4</color>
+    <color name="pi_btn_wanna_join_disable_bg">#cfcfcf</color>
+    <color name="pi_btn_wanna_btn_line">#ff887d</color>
+
+    <!--发帖页面-->
+    <color name="posting_main_text_gray">#c1c1c1</color>
+    <color name="posting_main_text_black">#363636</color>
+    <color name="posting_main_bg">#f8f8f8</color>
+    <color name="posting_main_white_bg">#ffffff</color>
+    <color name="posting_main_line_bg">#ababab</color>
+    <color name="posting_grid_item_camera_tx_color">#d6d6d6</color>
+    <color name="posting_main_gray">#c8c8c8</color>
+
+    <!--Titlebar-->
+    <color name="titlebar_album_bg">#e6292b2d</color>
+    <color name="titlebar_right_text_color_gray">#909090</color>
+    <color name="titlebar_right_text_color_white_disable">#ffa99c</color>
+    <color name="titlebar_right_text_color_red">#e8544c</color>
+    <color name="titlebar_block_pressed">#c24537</color>
+    <color name="titlebar_block_black_pressed">#1f2122</color>
+
+    <!--日期-->
+    <color name="posting_calendar_week_bg">#f3f3f3</color>
+    <color name="posting_calendar_title_color">#4f4f4f</color>
+    <color name="posting_calendar_month_color">#1f1f1f</color>
+    <color name="posting_calendar_day_color">#1f1f1f</color>
+    <color name="posting_calendar_day_unable_color">#727272</color>
+
+    <color name="normal_day">#ff999999</color>
+    <color name="posting_calendar_day_row_line">#ababab</color>
+    <color name="posting_calendar_selected_day_text">#ffffff</color>
+
+    <!--个人中心-->
+    <color name="csi_divider">#ababab</color>
+    <color name="fpc_bg">#f8f8f8</color>
+    <color name="fpc_btn_login_text">#f15e48</color>
+
+    <!-- 设置item-->
+    <color name="csi_content_text">#535353</color>
+    <color name="csi_hint">#c1c1c1</color>
+    <color name="csi_second_line_text">#9a9a9a</color>
+
+    <!--消息列表-->
+    <color name="mi_backgound">#f8f8f8</color>
+    <color name="mi_item_divider">#ababab</color>
+    <color name="mi_item_wanna_join_text">#7f7f7f</color>
+    <color name="mi_item_nick_name_text">#333333</color>
+    <color name="mi_item_message_time">#a2a2a2</color>
+    <color name="mi_item_contacts_text_normal">#696969</color>
+    <color name="mi_item_contacts_text_empty">#a4a4a4</color>
+    <color name="mi_item_icon_new">#f15e48</color>
+
+    <!--设置-->
+    <color name="settings_divider">#f8f8f8</color>
+
+    <!--编辑资料-->
+    <color name="eui_bg">#f8f8f8</color>
+    <color name="eui_tips">#a7a7a7</color>
+    <color name="cti_text">#464646</color>
+    <color name="cti_hint">#c1c1c1</color>
+    
+    <!--关于页面-->
+    <color name="about_app_name">#464646</color>
+    <color name="about_app_version">#a1a1a1</color>
+    <color name="about_bottom_text">#9c9c9c</color>
+    <color name="about_bg">#f8f8f8</color>
+
+    <!-- 同行小组-->
+    <color name="wjli_contact_info_bg">#f5f5f5</color>
+    <color name="wjl_dest_text">#888888</color>
+    <color name="wjl_dest_bg">#f5f5f5</color>
+    <color name="wjl_divider">#ababab</color>
+
+    <!--common dialog-->
+    <color name="common_dialog_divider">#f9594f</color>
+    <color name="common_dialog_divider2">#d0d0d0</color>
+    <color name="common_dialog_content_text">#323232</color>
+
+    <!-- 下拉弹窗 drop down dialog-->
+    <color name="drop_down_dlg_divider">#9f9f9f</color>
+    
+    <!--编辑联系方式-->
+    <color name="eci_title_hint">#9a9a9a</color>
+
+    <!--帖子详情-->
+    <color name="pd_btn_join_disabled_text">#d5d5d5</color>
+
+    <color name="tag_text">#ff887d</color>
+
+    <!--分享-->
+    <color name="share_dialog_text">#828282</color>
+
+</resources>

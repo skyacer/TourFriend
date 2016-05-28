@@ -1,0 +1,244 @@
+option java_package = "com.elong.tourpal.protocal";
+option java_outer_classname = "MessageProtos";
+//请求
+message RequestInfo{
+	required ClientInfo client_info = 1;
+	optional LoginInfo login_info = 2;
+	optional PostByDestRequestInfo post_by_dest_info = 3;//根据地点搜索帖子
+	optional PostByUserRequestInfo post_by_user_info = 4;//根据用户搜索帖子
+	optional PostRequestInfo post_req_info = 5;//发帖请求
+	optional string post_id = 6;//各种根据post_id的独立请求
+	optional UsersWannaJoinRequestInfo users_wanna_join_request_info = 7;//获取求同行的人的请求信息
+	optional UserInfo user_info = 8;//修改资料请求
+	optional string user_id = 9;//请求某个用户的uid的信息
+	optional WannaJoinRequest wanna_join_request = 10;//求同行或取消求同行的请求
+	optional DataUpdateRequestInfo data_update_request_info = 11;//数据更新的请求
+    optional bytes img = 12;
+    optional Feedback feedback = 101; // 用户反馈
+    optional string statistics_data = 102;	//数据打点
+    repeated int32 set_read_id = 100;//设置已读消息id
+}
+
+message ClientInfo{
+	required string client_version = 1;
+	required string build_brand = 2;
+	required string build_model = 3;
+	required string channel_id = 4;
+	required int32 version_code = 5;//版本号
+	required string mid = 6; // 标识机器的唯一性
+}
+
+message PostByDestRequestInfo{
+	required PageRequestInfo page_request_info = 1;
+	required string dest = 2;//目的地
+}
+
+message PostByUserRequestInfo{
+	required PageRequestInfo page_request_info = 1;
+	optional string uid = 2;//有id则请求id相关的，否则从session信息获取id
+}
+
+message UsersWannaJoinRequestInfo{
+	required PageRequestInfo page_request_info = 1;
+	optional string post_id = 2;
+}
+
+message PostRequestInfo{
+	required string start_time = 1;//开始时间
+	required int32 duration = 2;//游玩时间
+	required string weixin = 3;
+	required string qq = 4;
+	required string phone = 5;
+	required string content = 6;
+	optional string post_place = 7;
+	repeated bytes imgs = 100;
+	repeated DestInfo dest_info = 101;//目的地对象
+	repeated string post_tag = 102;//标签
+}
+
+message DestInfo{
+	required string dest = 1;//目的地
+	optional int32 dest_id = 2;//目的地id
+}
+
+message LoginInfo{
+	required string session_id = 1;
+	required string session_token = 2;
+	optional string push_client_id = 3;
+}
+
+message PageRequestInfo{
+	required int32 num_per_page = 1;
+	required int32 start_offset = 2;
+}
+
+message WannaJoinRequest{
+    required string post_id = 1;
+    required int32 state = 2;//0表示要取消点赞，1表示要点赞
+}
+
+message Feedback{
+	required string bugs = 1;
+	optional string qq = 2;
+	optional string email = 3;
+	optional string phone = 4;
+}
+
+message DataUpdateRequestInfo{
+    repeated string data_file_name = 100;
+}
+
+//返回
+message ResponseInfo{
+	required ErrCode err_code = 1;
+	optional PostResponseInfoList post_info_list = 2;
+	optional UserInfoList user_info_list = 3;
+	optional UserInfo user_info = 4;
+	optional WannaJoinResponse wanna_join_response = 5;
+	optional LikedMessageList liked_message_list = 6;//用户收到的点赞的消息列表
+	optional ClientUpdateInfo client_update_info = 7;//升级信息
+	optional DataUpdateResponseInfo data_update_info = 8;//数据更新信息
+    optional PostResponseInfo post_info = 9;//帖子详情
+	repeated HotCity hot_citys = 100;
+}
+
+enum ErrCode{
+	SUCCESS = 0;
+	ERROR_DATA_ERROR = 1;//数据库错误
+	ERROR_INFO_NOT_COMPLETE = 2;//用户信息不完整
+	ERROR_NOT_LOGIN = 3;//用户未登陆
+}
+
+message HotCity{
+	required string url = 1;
+	required string name = 2;
+	required string desc = 3;
+}
+
+message PostResponseInfoList{
+	required PageResponseInfo page_response_info = 1;
+	repeated PostResponseInfo post_infos = 100;
+}
+
+message PostResponseInfo{
+	required string id = 1;
+	required string uid = 2;
+	required string created_time = 3;//发帖时间
+	required string days = 4;
+	required string weixin = 5;
+	required string qq = 6;
+	required string phone = 7;
+	required string content = 8;
+	required string post_place = 9;
+	required string start_time = 10;//开始时间
+	required string finish_time = 11;//结束时间
+	required string dest = 12;//目的地
+	required bool is_my = 13;//是否是我的发帖
+	required bool is_liked = 14;//自己是否已点“求同行”
+	required int32 like_num = 15;//求同行的人
+	required UserInfo user_info = 16;
+	required PostStatus status = 17;//帖子状态
+	required int32 pv = 18;//浏览量
+	repeated PostImg imgs = 100;
+	repeated string post_tag = 101;//标签
+
+	//详情专属
+	optional PostDetailInfo post_detail_info = 19;
+}
+
+message PostDetailInfo{
+	required ShareInfo share_info = 1;
+	repeated LikedMessage liked_message = 100;
+}
+
+message ShareInfo{
+	required string share_link = 1;
+	required string share_ico = 2;
+	required string share_title = 3;
+	required string share_desc = 4;
+}
+
+message PostImg{
+	required string thumb = 1;//缩略图
+	required string preview = 2;//预览图（大图）
+}
+
+message UserInfoList{
+	required PageResponseInfo page_response_info = 1;
+	repeated UserInfo user_infos = 100;
+}
+
+message UserInfo{
+	required string id = 1;
+	required string head_img_url = 2;//头像（缩略图）
+	required string nick_name = 3;
+	required int32 sex = 4;
+	required int32 age = 5;
+	required string weixin = 6;
+	required string qq = 7;
+	required string phone = 8;
+	optional bool is_complete = 9;
+	required int32 visible_item = 10;//用二进制表示
+	required bool group_visible = 11;//是否对于同一个小组的其他人可见
+	required string head_img_url_origin = 12;//头像（原图）
+}
+
+message ClientUpdateInfo{
+	required bool need_update = 1;
+	optional string latest_version_name = 2;
+	optional string latest_version_url = 3;
+}
+
+message LikedMessageList{
+	required PageResponseInfo page_response_info = 1;
+	repeated LikedMessage liked_message = 2;
+}
+
+message LikedMessage{
+	required string id = 1;
+	required UserInfo user_info = 2;
+	required string dest = 3;
+	required int32 is_read = 4;//未读是0，已读是1
+	required string created_at = 5;
+    required string post_id = 6;//点赞的帖子id
+}
+
+message WannaJoinResponse{
+    required int32 wanna_join_num = 1;//该帖子的所有点赞数或者最新的点赞数
+    required int32 wanna_join_state = 2;//当前状态是已点赞还是未点赞，已点赞：1，未点赞:0
+}
+
+message PageResponseInfo{
+	required bool has_rest = 1;
+	required int32 end_offset = 2;
+}
+
+message DataUpdateResponseInfo{
+    repeated UpdateData update_data = 1;
+}
+
+message UpdateData{
+    required string file_name = 1;//带版本号
+    required string url = 2;
+}
+
+enum PostStatus{
+	OPENED = 0;
+	DELETED = 1;
+	CLOSED = 2;
+}
+
+// 推送的push消息----------------------------
+message PushMessage{
+	required PushMsgType type = 1; //类型
+	required string title = 2; //标题
+	required string content = 3;//内容
+}
+
+enum PushMsgType{
+    SYSTEM = 0;
+    WANNA_JOIN = 1;
+}
+
+
+

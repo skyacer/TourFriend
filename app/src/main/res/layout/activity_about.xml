@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.AboutActivity"
+    android:background="@color/about_bg">
+
+    <ImageView
+        android:id="@+id/about_iv_logo"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:src="@mipmap/ic_about_logo" />
+
+    <TextView
+        android:id="@+id/about_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_iv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_name"
+        android:textColor="@color/about_app_name"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/about_app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_app_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="1.0.0"
+        android:textColor="@color/about_app_version"
+        android:textSize="13dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:id="@+id/about_ll_bottom"
+        android:layout_marginTop="212dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/mi_item_divider"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/about_welcome"
+            android:textColor="@color/about_bottom_text"
+            android:textSize="13dp"/>
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="77dp"
+            android:layout_marginRight="77dp"
+            android:background="@color/mi_item_divider"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_tv_wechat"
+            android:text="@string/about_wechat"
+            android:layout_marginTop="14dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/about_bottom_text"
+            android:textSize="13dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_tv_weibo"
+            android:text="@string/about_weibo"
+            android:layout_marginTop="14dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/about_bottom_text"
+            android:textSize="13dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/about_ll_bottom"
+        android:background="@color/mi_item_divider"/>
+
+</RelativeLayout>

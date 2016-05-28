@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_titlebar_height"
+    android:gravity="center_vertical">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/destination_search_bg"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:src="@mipmap/ic_search"/>
+
+        <EditText
+            android:id="@+id/destination_search_titlebar_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/posting_main_text_size_1"
+            android:textColor="@color/posting_main_text_black"
+            android:textColorHint="@color/posting_main_text_gray"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/tp_m_search_text"
+            android:background="@null"/>
+    </LinearLayout>
+    <!-- 右边的button，有文字的 -->
+    <LinearLayout
+        android:id="@+id/destination_search_titlebar_right_tv_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/destination_search_titlebar_right_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textSize="@dimen/posting_main_text_size_1"
+            android:textColor="@color/white"
+            android:text="@string/cancel"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/select_titlebar_block"/>
+
+    </LinearLayout>
+</LinearLayout>

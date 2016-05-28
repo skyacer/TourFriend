@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingBottom="7dp"
+    android:paddingTop="7dp">
+
+    <EditText
+        android:id="@+id/select_edit_view_search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/select_edit_search"
+        android:textColorHint="@color/posting_main_text_gray"
+        android:textSize="@dimen/posting_main_text_size_1"
+        android:background="@null"
+        android:textColor="@color/posting_main_text_black"/>
+</LinearLayout>

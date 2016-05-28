@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="@color/pi_btn_wanna_btn_line"
+        android:layout_alignParentTop="true"/>
+    
+    <com.elong.tourpal.ui.views.CenterDrawableButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bottom_btn_left"
+        android:layout_marginTop="2px"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/bottom_button_center_separator"
+        android:textSize="14dp"
+        android:textColor="@color/pi_btn_wanna_btn_line"
+        android:background="@drawable/white_clickable_bg"
+        android:elevation="0dp"/>
+
+    <View
+        android:layout_width="2px"
+        android:layout_height="fill_parent"
+        android:id="@+id/bottom_button_center_separator"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/pi_btn_wanna_btn_line"/>
+
+    <com.elong.tourpal.ui.views.CenterDrawableButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bottom_btn_right"
+        android:layout_marginTop="2px"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/bottom_button_center_separator"
+        android:textSize="14dp"
+        android:textColor="@color/pi_btn_wanna_btn_line"
+        android:background="@drawable/white_clickable_bg"
+        android:elevation="0dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.FeedbackActivity"
+    android:background="@color/common_gray_bg">
+
+    <com.elong.tourpal.ui.views.CommonEditableItem
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:id="@+id/feedback_cei_email"
+        android:layout_marginTop="13dp"/>
+
+    <com.elong.tourpal.ui.views.CommonEditableItem
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:id="@+id/feedback_cei_phone"
+        android:layout_below="@+id/feedback_cei_email"/>
+
+    <com.elong.tourpal.ui.views.CommonEditableItem
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:id="@+id/feedback_cei_qq"
+        android:layout_below="@+id/feedback_cei_phone"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/feedback_separator_1"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/feedback_cei_qq"
+        android:background="@color/csi_divider"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:gravity="top|left"
+        android:id="@+id/feedback_et_content"
+        android:singleLine="false"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:textSize="15dp"
+        android:textColor="@color/cti_text"
+        android:textColorHint="@color/cti_hint"
+        android:layout_below="@+id/feedback_separator_1"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:id="@+id/feedback_separator_2"
+        android:layout_below="@+id/feedback_et_content"
+        android:background="@color/csi_divider"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/feedback_separator_2"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#999999"
+        android:textSize="14sp"
+        android:text="@string/feedback_fans_qq_qun"/>
+
+</RelativeLayout>

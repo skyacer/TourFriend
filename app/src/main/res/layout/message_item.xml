@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/mi_rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="10dp">
+
+        <com.elong.tourpal.imageasyncloader.view.CustomImageView
+            android:id="@+id/mi_iv_avatar"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="4dp"
+            android:src="@android:drawable/ic_menu_report_image" />
+        
+        <ImageView
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:id="@+id/mi_iv_new"
+            android:visibility="visible"
+            android:layout_alignTop="@+id/mi_iv_avatar"
+            android:layout_alignRight="@+id/mi_iv_avatar"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:background="@drawable/icon_new"/>
+
+        <TextView
+            android:id="@+id/mi_tv_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/mi_iv_avatar"
+            android:gravity="center"
+            android:textColor="@color/mi_item_nick_name_text"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/mi_tv_sex_and_age"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/mi_tv_nick_name"
+            android:background="@drawable/bg_female"
+            android:drawableLeft="@mipmap/ic_female"
+            android:drawablePadding="3dp"
+            android:text="26"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/mi_tv_wanna_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mi_tv_nick_name"
+            android:layout_below="@+id/mi_tv_sex_and_age"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/mi_item_wanna_join_text"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/mi_tv_message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/mi_tv_nick_name"
+            android:textColor="@color/mi_item_message_time"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mi_rl_contacts"
+        android:background="@drawable/contact_info_bubble_bg"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="13dp"
+        android:paddingBottom="13dp"
+        android:layout_below="@+id/mi_rl_top"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mi_tv_wechat"
+            android:layout_marginTop="14dp"
+            android:drawableLeft="@mipmap/ic_wechat_small"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="未填写"
+            android:textSize="11dp"
+            android:textColor="@color/mi_item_contacts_text_normal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mi_tv_qq"
+            android:layout_alignTop="@+id/mi_tv_wechat"
+            android:drawableLeft="@mipmap/ic_qq_small"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="165dp"
+            android:text="未填写"
+            android:textSize="11dp"
+            android:textColor="@color/mi_item_contacts_text_normal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mi_tv_phone"
+            android:drawableLeft="@mipmap/ic_phone_small"
+            android:drawablePadding="5dp"
+            android:layout_alignLeft="@+id/mi_tv_wechat"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/mi_tv_wechat"
+            android:text="未填写"
+            android:textSize="11dp"
+            android:textColor="@color/mi_item_contacts_text_normal"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/mi_rl_contacts"
+        android:background="@color/mi_item_divider"
+        android:id="@+id/mi_separator"/>
+
+</RelativeLayout>

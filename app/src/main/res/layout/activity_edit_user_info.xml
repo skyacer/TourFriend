@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eui_bg"
+    tools:context="com.elong.tourpal.ui.activities.EditUserInfoActivity">
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eui_csi_avatar"
+        android:layout_marginTop="13dp"/>
+    
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eui_csi_nick_name"
+        android:layout_below="@+id/eui_csi_avatar"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eui_csi_sex"
+        android:layout_below="@+id/eui_csi_nick_name"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eui_csi_age"
+        android:layout_below="@+id/eui_csi_sex"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eui_csi_contact_info"
+        android:layout_below="@+id/eui_csi_age"/>
+
+</RelativeLayout>

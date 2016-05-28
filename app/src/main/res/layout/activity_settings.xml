@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.SettingsActivity"
+    android:background="@color/settings_divider">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:background="@color/settings_divider"
+        android:id="@+id/settings_divider_1"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_voice"
+        android:layout_below="@+id/settings_divider_1"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_vibration"
+        android:layout_below="@+id/settings_csi_voice"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_push"
+        android:layout_below="@+id/settings_csi_vibration"/>
+    
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:id="@+id/settings_divider_2"
+        android:background="@color/settings_divider"
+        android:layout_below="@+id/settings_csi_push"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_about"
+        android:layout_below="@+id/settings_divider_2"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_check_update"
+        android:layout_below="@+id/settings_csi_about"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_feedback"
+        android:layout_below="@+id/settings_csi_check_update"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:id="@+id/settings_divider_3"
+        android:background="@color/settings_divider"
+        android:layout_below="@+id/settings_csi_feedback"/>
+
+    <com.elong.tourpal.ui.views.CommonSettingItem
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_csi_logoff"
+        android:layout_below="@+id/settings_divider_3"/>
+
+</RelativeLayout>

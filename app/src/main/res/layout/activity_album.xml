@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/common_titlebar_height"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <GridView
+                android:id="@+id/pic_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:horizontalSpacing="4dp"
+                android:stretchMode="columnWidth"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:verticalSpacing="4dp" >
+            </GridView>
+        </LinearLayout>
+
+        <com.elong.tourpal.ui.views.CommonTitleBar
+            android:id="@+id/posting_main_titlebar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+</FrameLayout>

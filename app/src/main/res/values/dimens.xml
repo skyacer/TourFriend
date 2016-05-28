@@ -1,0 +1,52 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">17dp</dimen>
+    <dimen name="common_dialog_margin_left_right">20dp</dimen>
+    <dimen name="common_dialog_margin_top">60dp</dimen>
+
+    <!-- TitleBar -->
+    <dimen name="common_titlebar_height">48dp</dimen>
+    <dimen name="common_titlebar_left_height">40dp</dimen>
+    <dimen name="common_titlebar_right_height">47dp</dimen>
+    <dimen name="common_titlebar_title_text_size">17sp</dimen>
+    <dimen name="common_titlebar_title_left_right_size">13dp</dimen>
+    <dimen name="common_titlebar_other_text_size">14sp</dimen>
+    <dimen name="common_titlebar_text_padding">11dp</dimen>
+    <dimen name="login_elong_padding">10dp</dimen>
+
+    <!--帖子列表-->
+    <dimen name="relative_grid_divider_margin">10dp</dimen>
+
+    <!--发帖-->
+    <dimen name="posting_main_text_size_0">12sp</dimen>
+    <dimen name="posting_main_text_size_1">14sp</dimen>
+    <dimen name="posting_main_text_size_2">16sp</dimen>
+    <dimen name="select_edit_search_width">60dp</dimen>
+    <dimen name="select_edit_item_delete_width">20dp</dimen>
+
+    <!--日期-->
+    <dimen name="posting_calendar_title_text">12sp</dimen>
+    <dimen name="posting_calendar_text_size_day">13sp</dimen>
+    <dimen name="posting_calendar_text_size_month">14sp</dimen>
+    <dimen name="posting_calendar_text_size_day_name">13sp</dimen>
+    <dimen name="posting_calender_header_month_height">33dip</dimen>
+    <dimen name="selected_day_radius">16dip</dimen>
+    <dimen name="posting_calender_day_row_height">64dip</dimen>
+    <dimen name="posting_main_search_top_height">108dip</dimen>
+
+    <!--设置-->
+    <dimen name="csi_divider_part_margin_left_no_left_icon">14dp</dimen>
+    <dimen name="csi_content_margin_left_no_left_icon">17dp</dimen>
+    <dimen name="csi_avatar_height">76dp</dimen>
+
+    <!--标签-->
+    <dimen name="tag_text_size">14dp</dimen>
+    <dimen name="tag_margin">10dp</dimen>
+
+    <!-- 帖子详情-->
+    <dimen name="bottom_btn_ic_padding">8dp</dimen>
+    <!--分享-->
+    <dimen name="share_dialog_margin">0dp</dimen>
+
+</resources>

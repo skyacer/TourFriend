@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.MainTabsActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mt_vp_contents"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/tp_m_tabs_separator"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/tp_m_tabs_separator"
+        android:layout_above="@+id/mt_ll_tabs"
+        android:background="@color/tp_m_tabs_separator"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="54dp"
+        android:id="@+id/mt_ll_tabs"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/mt_ll_tab_main"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="center"
+                android:layout_marginTop="7dp"
+                android:id="@+id/mt_iv_tab_main"
+                android:src="@mipmap/ic_home"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/mt_tv_tab_main"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:text="首页"
+                android:textSize="12dp"
+                android:textColor="@color/tab_item_text_normal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/mt_ll_tab_msg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="center"
+                    android:id="@+id/mt_iv_tab_msg"
+                    android:src="@mipmap/ic_message"/>
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:id="@+id/mt_iv_tab_msg_new"
+                    android:layout_alignTop="@+id/mt_iv_tab_msg"
+                    android:layout_toRightOf="@+id/mt_iv_tab_msg"
+                    android:layout_marginLeft="3dp"
+                    android:src="@drawable/icon_new"
+                    android:visibility="visible"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/mt_tv_tab_msg"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:text="消息"
+                android:textSize="12dp"
+                android:textColor="@color/tab_item_text_normal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/mt_ll_tab_personal_center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="center"
+                android:layout_marginTop="7dp"
+                android:id="@+id/mt_iv_tab_personal_center"
+                android:src="@mipmap/ic_message"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/mt_tv_tab_personal_center"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:text="我的"
+                android:textSize="12dp"
+                android:textColor="@color/tab_item_text_normal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

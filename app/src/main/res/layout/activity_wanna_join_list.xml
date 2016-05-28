@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elong.tourpal.ui.activities.WannaJoinListActivity"
+    android:background="@color/white">
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wjl_dest"
+        android:gravity="center_vertical"
+        android:singleLine="false"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:minHeight="34dp"
+        android:background="@color/wjl_dest_bg"
+        android:textColor="@color/wjl_dest_text"
+        android:textSize="14dp"
+        android:drawableRight="@mipmap/ic_right_arrow"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/wjl_dest"
+        android:id="@+id/wjl_divider"
+        android:background="@color/wjl_divider"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/wjl_divider">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/wjl_lv_list"
+            android:divider="@null"
+            android:listSelector="@color/transparent"/>
+
+        <com.elong.tourpal.ui.views.EmptyView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/wjl_empty_view"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:calendar="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/common_titlebar_height">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:background="@color/posting_calendar_week_bg">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="日"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="一"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="二"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="三"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="四"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="五"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/posting_calendar_title_text"
+            android:textColor="@color/posting_calendar_title_color"
+            android:text="六"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/posting_main_line_bg"/>
+    
+    <com.elong.tourpal.ui.supports.calendar.DayPickerView
+        android:id="@+id/posting_pickerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        calendar:drawRoundRect="true"/>
+</LinearLayout>

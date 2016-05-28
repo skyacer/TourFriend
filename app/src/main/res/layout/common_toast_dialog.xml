@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="40dp"
+    android:gravity="center"
+    android:background="@drawable/common_dialog_bg">
+    <ImageView
+        android:id="@+id/common_dialog_iv"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/icon_loading"/>
+
+    <TextView
+        android:id="@+id/common_dialog_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/common_titlebar_other_text_size"
+        android:textColor="@color/white"
+        android:text="@string/loading"/>
+</LinearLayout>

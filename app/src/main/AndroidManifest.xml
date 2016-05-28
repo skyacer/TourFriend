@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.elong.tourpal" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="getui.permission.GetuiService.com.elong.tourpal" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <permission
+        android:name="getui.permission.GetuiService.com.elong.tourpal"
+        android:protectionLevel="normal" >
+    </permission>
+
+    <application
+        android:name=".application.TourPalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_tourpal"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.SlideAnimation" >
+        <meta-data
+            android:name="CHANNEL_ID"
+            android:value="${CHANNEL_VALUE}" />
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="26h8y3XpK59AJZwNgqKrp5" />
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="w6vxbhpIDG9emzV5ytutA9" />
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="UuNxu7paFo9GZjbkGIAth5" />
+        <meta-data
+            android:name="PUSH_GROUPID"
+            android:value="" />
+
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activities.MainTabsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.LoginWebviewActivity"
+            android:label="@string/title_activity_login_webview"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.PostListActivity"
+            android:label="@string/title_activity_page_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.PostingTourActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.EditUserInfoActivity"
+            android:label="@string/title_activity_edit_user_info"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.DestinationSerarchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.PersonalCenterActivity"
+            android:label="@string/title_activity_personal_center"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.FeedbackActivity"
+            android:label="@string/title_activity_feedback"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.WannaJoinListActivity"
+            android:label="@string/title_activity_wanna_join_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.AlbumActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.CropPhotoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 微信分享 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- QQ分享 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- QQ分享的APPID -->
+                <data android:scheme="1104524037" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name=".push.TourpalPushReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.26h8y3XpK59AJZwNgqKrp5" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 个推相关的组件：start -->
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- 配置弹框activity -->
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- 这个com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4固定，不能修改 -->
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <!-- 替换为android:name="com.igexin.sdk.action.第三方的appId" -->
+                <action android:name="com.igexin.sdk.action.26h8y3XpK59AJZwNgqKrp5" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+        <!-- 个推download模块配置 -->
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.elong.tourpal"
+            android:process=":pushservice" /> <!-- 替换为downloads.第三方包名 -->
+        <!-- 个推相关的组件：end -->
+        <activity
+            android:name=".ui.activities.PostDetailActivity"
+            android:label="@string/title_activity_post_detail" >
+        </activity>
+        <activity
+            android:name=".ui.activities.EditSpecItemActivity"
+            android:label="@string/title_activity_edit_spec_item" >
+        </activity>
+        <activity
+            android:name=".ui.activities.EditContactInfoActivity"
+            android:label="@string/title_activity_edit_contact_info"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.elong.tourpal"
+        minSdkVersion 10
+        targetSdkVersion 21
+        versionCode 103
+        versionName '1.1.0.002'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    productFlavors {
+        wandoujia {
+            manifestPlaceholders = [CHANNEL_VALUE: "wandoujia"]
+        }
+
+        baidu {
+            manifestPlaceholders = [CHANNEL_VALUE: "baidu"]
+        }
+
+        qihoo360 {
+            manifestPlaceholders = [CHANNEL_VALUE: "qihoo360"]
+        }
+
+        xiaomi {
+            manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
+        }
+
+        yingyongbao {
+            manifestPlaceholders = [CHANNEL_VALUE: "yingyongbao"]
+        }
+
+        hiapk {
+            manifestPlaceholders = [CHANNEL_VALUE: "hiapk"]
+        }
+
+        official {
+            manifestPlaceholders = [CHANNEL_VALUE: "official"]
+        }
+
+        taobao {
+            manifestPlaceholders = [CHANNEL_VALUE: "taobao"]
+        }
+
+        pp {
+            manifestPlaceholders = [CHANNEL_VALUE: "pp"]
+        }
+
+        sougou {
+            manifestPlaceholders = [CHANNEL_VALUE: "sougou"]
+        }
+
+        yingyonghui {
+            manifestPlaceholders = [CHANNEL_VALUE: "yingyonghui"]
+        }
+
+        nduo {
+            manifestPlaceholders = [CHANNEL_VALUE: "nduo"]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'in.srain.cube:ultra-ptr:1.0.8@aar'
+    compile files('libs/open_sdk_r4889_lite.jar')
+}

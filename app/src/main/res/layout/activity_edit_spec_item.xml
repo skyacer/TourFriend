@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/esi_rl_divider_top"
+        android:layout_width="fill_parent"
+        android:layout_height="13dp"
+        android:background="@color/pi_divider_padding_bg">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/pi_divider_line" />
+
+    </RelativeLayout>
+    
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:id="@+id/esi_et_content"
+        android:layout_below="@+id/esi_rl_divider_top"
+        android:paddingLeft="18dp"
+        android:textColor="@color/cti_text"
+        android:textSize="16dp"
+        android:background="@color/transparent"
+        android:hint="@string/mi_empty_contact_info"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/esi_et_content"
+        android:background="@color/pi_divider_line"/>
+
+</RelativeLayout>
