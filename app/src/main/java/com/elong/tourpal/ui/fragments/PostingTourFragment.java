@@ -33,6 +33,8 @@ import android.widget.Toast;
 import com.elong.tourpal.R;
 import com.elong.tourpal.application.Env;
 import com.elong.tourpal.application.TourPalApplication;
+import com.elong.tourpal.db.DBManagerClient;
+import com.elong.tourpal.model.TourPostData;
 import com.elong.tourpal.module.file.TagsFileManager;
 import com.elong.tourpal.net.Request;
 import com.elong.tourpal.net.RequestBuilder;
@@ -289,48 +291,49 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
     private CommonToastDialog waitDialog;
 
     private void postTourPlan() {
-        PostData postData = getPostData();
+//        PostData postData = getPostData();
+        final TourPostData postData = getPostData();
         boolean isvalidate = validateInputData(postData);
         // 对用户的输入没有校验过就返回
         if (!isvalidate) {
             return;
         }
-        final MessageProtos.PostRequestInfo postTourPlanInfo = buildPostRequestInfo(postData);
+//        final MessageProtos.PostRequestInfo postTourPlanInfo = buildPostRequestInfo(postData);
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Request r = RequestBuilder.buildSendPostRequest(postTourPlanInfo);
+//                Request r = RequestBuilder.buildSendPostRequest(postTourPlanInfo);
                 boolean isSuccess = false;
-                MessageProtos.ResponseInfo responseInfo = r.post();
-                if (responseInfo != null) {
-                    if (responseInfo.getErrCode() == MessageProtos.SUCCESS) {
+//                MessageProtos.ResponseInfo responseInfo = r.post();
+                if (DBManagerClient.insertTourPost(postData) != -1) {
+//                    if (responseInfo.getErrCode() == MessageProtos.SUCCESS) {
                         // 成功
                         isSuccess = true;
-                        mSelectEditView.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                waitDialog.dismiss();
-                                String desIdAndName = ((PostingTourActivity) getActivity()).mSelectedDistinations.get(0);
-                                String desName = desIdAndName.substring(desIdAndName.indexOf("_") + 1);
-                                DestinationDataManager.DestinationOrigData desData = DestinationSearchManager.getInstance(TourPalApplication.getAppContext()).findDestinationDataByName(desName);
-                                if (DEBUG) {
-                                    Log.d(TAG, String.format("level=%d, name=%s, grandparent name=%s", desData.mLevel,
-                                            desData.mDesName,
-                                            desData.mGrandparents == null ? "null" : desData.mGrandparents.get(0).mDesName));
-                                }
-                                if (desData.mLevel > 2) {
-                                    if (desData.mGrandparents != null && desData.mGrandparents.get(0) != null) {
-                                        desName = desData.mGrandparents.get(0).mDesName;
-                                    }
-                                }
-                                PostListActivity.startActivityByDest(getActivity(), desName);
-                                getActivity().finish();
-                            }
-                        }, 100);
+//                        mSelectEditView.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                waitDialog.dismiss();
+//                                String desIdAndName = ((PostingTourActivity) getActivity()).mSelectedDistinations.get(0);
+//                                String desName = desIdAndName.substring(desIdAndName.indexOf("_") + 1);
+//                                DestinationDataManager.DestinationOrigData desData = DestinationSearchManager.getInstance(TourPalApplication.getAppContext()).findDestinationDataByName(desName);
+//                                if (DEBUG) {
+//                                    Log.d(TAG, String.format("level=%d, name=%s, grandparent name=%s", desData.mLevel,
+//                                            desData.mDesName,
+//                                            desData.mGrandparents == null ? "null" : desData.mGrandparents.get(0).mDesName));
+//                                }
+//                                if (desData.mLevel > 2) {
+//                                    if (desData.mGrandparents != null && desData.mGrandparents.get(0) != null) {
+//                                        desName = desData.mGrandparents.get(0).mDesName;
+//                                    }
+//                                }
+//                                PostListActivity.startActivityByDest(getActivity(), desName);
+//                                getActivity().finish();
+//                            }
+//                        }, 100);
 
-                        return;
-                    }
+//                        return;
+//                    }
                 }
 
                 mSelectEditView.postDelayed(new Runnable() {
@@ -491,8 +494,9 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
      *
      * @return
      */
-    private PostData getPostData() {
-        PostData postData = new PostData();
+    private TourPostData getPostData() {
+//        PostData postData = new PostData();
+        TourPostData postData = new TourPostData();
         postData.mDestinationAndIds = ((PostingTourActivity) getActivity()).mSelectedDistinations;
         PostingTourActivity pta = (PostingTourActivity) getActivity();
         postData.mStartTime = pta.getStartTime();
@@ -502,7 +506,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
         postData.QQ = mQQEt.getText().toString().trim();
         postData.mPhone = mPhoneEt.getText().toString().trim();
         postData.mDetail = mTourDetailEt.getText().toString().trim();
-        postData.mSelectPhotoes = pta.getCurrentSelectedPics();
+//        postData.mSelectPhotoes = pta.getCurrentSelectedPics();
         return postData;
     }
 
@@ -512,7 +516,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
      * @param postData
      * @return
      */
-    private boolean validateInputData(PostData postData) {
+    private boolean validateInputData(TourPostData postData) {
         ArrayList<String> destinations = postData.mDestinationAndIds;
         if (destinations.size() == 0) {
             Toast.makeText(this.getActivity(), R.string.posting_main_error_no_destination, Toast.LENGTH_SHORT).show();

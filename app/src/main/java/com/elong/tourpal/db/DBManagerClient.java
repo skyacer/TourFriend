@@ -5,8 +5,10 @@ import android.database.Cursor;
 import android.util.Log;
 
 import com.elong.tourpal.application.Env;
+import com.elong.tourpal.model.TourPostData;
 import com.elong.tourpal.search.DestinationDataManager;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +52,41 @@ public class DBManagerClient {
         return count;
     }
 
-    public static int insertTourPost(){
-        return -1;
+    /**
+     * 插入旅程信息
+     * @return
+     */
+    public static int insertTourPost(TourPostData data){
+        if (data == null){
+            return -1;
+        }
+        long time1 = System.currentTimeMillis();
+        if (DEBUG) {
+            Log.w(TAG, "time1:" + time1);
+        }
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        ArrayList<ContentValues> valuesList = new ArrayList<ContentValues>();
+        ContentValues values = new ContentValues();
+        if (data.mDestinationAndIds.get(0)!=null) {
+            values.put(TourPostTableColum.COL_TOURPOST_ID, data.mDestinationAndIds.get(0));
+        }
+        values.put(TourPostTableColum.COL_TOURPOST_STARTTIME,sf.format(data.mStartTime.getTime()));
+        values.put(TourPostTableColum.COL_TOURPOST_ENDTIME,sf.format(data.mEndTime.getTime()));
+        if (data.mSelectTags.get(0)!=null) {
+            values.put(TourPostTableColum.COL_TOURPOST_TAG, data.mSelectTags.get(0));
+        }
+        values.put(TourPostTableColum.COL_TOURPOST_WX,data.mWeixin);
+        values.put(TourPostTableColum.COL_TOURPOST_QQ,data.QQ);
+        values.put(TourPostTableColum.COL_TOURPOST_PHONE,data.mPhone);
+        values.put(TourPostTableColum.COL_TOURPOST_DETAIL,data.mDetail);
+        valuesList.add(values);
+        DBManager.getInstance().batchInsert(DBHelper.TABLE_NAME_TOURPOST,null,valuesList);
+
+        if (DEBUG) {
+            Log.w(TAG, "time1:" + (System.currentTimeMillis() - time1));
+        }
+
+        return 0;
     }
 
     public static boolean updateAllDesData(List<DestinationDataManager.DestinationOrigData> data) {
