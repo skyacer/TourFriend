@@ -36,15 +36,12 @@ import com.elong.tourpal.application.TourPalApplication;
 import com.elong.tourpal.db.DBManagerClient;
 import com.elong.tourpal.model.TourPostData;
 import com.elong.tourpal.module.file.TagsFileManager;
-import com.elong.tourpal.net.Request;
-import com.elong.tourpal.net.RequestBuilder;
 import com.elong.tourpal.protocal.MessageProtos;
 import com.elong.tourpal.search.DestinationDataManager;
 import com.elong.tourpal.search.DestinationSearchManager;
 import com.elong.tourpal.support.stat.Statistics;
 import com.elong.tourpal.support.stat.StatisticsEnv;
 import com.elong.tourpal.ui.activities.LoginWebviewActivity;
-import com.elong.tourpal.ui.activities.PostListActivity;
 import com.elong.tourpal.ui.activities.PostingTourActivity;
 import com.elong.tourpal.ui.supports.SearchDestinationAdapter;
 import com.elong.tourpal.ui.supports.TagsGridAdapter;
@@ -56,7 +53,9 @@ import com.elong.tourpal.ui.supports.album.SelectEditView;
 import com.elong.tourpal.ui.views.CommonTitleBar;
 import com.elong.tourpal.ui.views.CommonToastDialog;
 import com.elong.tourpal.ui.views.FixedGridView;
+import com.elong.tourpal.utils.ResourcesUtil;
 import com.elong.tourpal.utils.SharedPref;
+import com.elong.tourpal.utils.ToastUtil;
 import com.elong.tourpal.utils.Utils;
 import com.google.protobuf.micro.ByteStringMicro;
 
@@ -310,6 +309,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
 //                    if (responseInfo.getErrCode() == MessageProtos.SUCCESS) {
                         // 成功
                         isSuccess = true;
+
 //                        mSelectEditView.postDelayed(new Runnable() {
 //                            @Override
 //                            public void run() {
@@ -336,16 +336,23 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
 //                    }
                 }
 
+                final boolean finalIsSuccess = isSuccess;
                 mSelectEditView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        waitDialog.setIsLoading(false);
-                        waitDialog.setmDialogIcon(R.drawable.icon_tip);
-                        waitDialog.setDialogTitle(getString(R.string.posting_main_post_fail));
-                        waitDialog.setDuration(CommonToastDialog.LENGTH_LONG);
-                        waitDialog.show();
+                        if (waitDialog!=null) {
+                            waitDialog.dismiss();
+                        }
+                        if (!finalIsSuccess) {
+                            ToastUtil.makeShortToast(ResourcesUtil.getString(R.string.posting_main_post_fail));
+                        }else {
+                            ToastUtil.makeShortToast(ResourcesUtil.getString
+                                    (R.string.posting_main_post_success));
+
+                            getActivity().finish();
+                        }
                     }
-                }, 100);
+                }, 300);
 
             }
         }).start();

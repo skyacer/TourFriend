@@ -50,6 +50,9 @@ public class TourPalApplication extends Application {
         TagsFileManager.initPostTags();
         //打点数据
         Statistics.log(this, StatisticsEnv.APP_OPEN);
+
+        AppProfile.sContext = getApplicationContext();
+
     }
 
     /**

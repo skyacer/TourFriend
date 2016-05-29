@@ -113,6 +113,7 @@
     <string name="posting_main_error_no_detail">请输入旅行计划详情</string>
     <string name="posting_main_is_posting">正在发布旅行计划</string>
     <string name="posting_main_post_fail">发布旅行计划失败</string>
+    <string name="posting_main_post_success">发布旅行计划成功</string>
     <string name="posting_send">发送</string>
     <string name="posting_max_photo_select">最多选择3张图片</string>
     <string name="posting_main_exit_tip">发帖还未完成，确定要离开吗？</string>

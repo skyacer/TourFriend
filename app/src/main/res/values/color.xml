@@ -9,6 +9,18 @@
     <color name="tourpal_gray">#909090</color>
     <color name="common_dialog_bg">#000000</color>
 
+    <color name="black_alpha5">#0c000000</color>
+    <color name="black_alpha10">#1a000000</color>
+    <color name="black_alpha15">#26000000</color>
+    <color name="black_alpha20">#33000000</color>
+    <color name="black_alpha30">#4c000000</color>
+    <color name="black_alpha40">#66000000</color>
+    <color name="black_alpha50">#7f000000</color>
+    <color name="black_alpha54">#89000000</color>
+    <color name="black_alpha60">#99000000</color>
+    <color name="black_alpha80">#bc000000</color>
+
+
     <!--通用-->
     <color name="title_bg_gradient_start">#e24a4a</color>
     <color name="title_bg_gradient_end">#f26048</color>
