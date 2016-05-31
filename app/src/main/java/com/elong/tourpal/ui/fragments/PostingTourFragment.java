@@ -510,7 +510,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
         postData.mEndTime = pta.getEndTime();
         postData.mSelectTags = ((PostingTourActivity)getActivity()).mSelectedTags;
         postData.mWeixin = mWeixinEt.getText().toString().trim();
-        postData.QQ = mQQEt.getText().toString().trim();
+        postData.mQQ = mQQEt.getText().toString().trim();
         postData.mPhone = mPhoneEt.getText().toString().trim();
         postData.mDetail = mTourDetailEt.getText().toString().trim();
 //        postData.mSelectPhotoes = pta.getCurrentSelectedPics();
@@ -546,7 +546,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
         }
 
         String weixin = postData.mWeixin;
-        String qq = postData.QQ;
+        String qq = postData.mQQ;
         String phone = postData.mPhone;
 
         if (TextUtils.isEmpty(weixin) && TextUtils.isEmpty(qq) && TextUtils.isEmpty(phone)) {

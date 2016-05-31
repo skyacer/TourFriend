@@ -4665,12 +4665,20 @@ public final class MessageProtos {
   @SuppressWarnings("hiding")
   public static final class UserInfo extends
       com.google.protobuf.micro.MessageMicro {
-    public UserInfo() {}
-    
+    private UserInfo() {}
+
+      private  static class UserInfoHolder{
+    private final  static UserInfo instance = new UserInfo();
+    }
+
+    public static UserInfo getUserInfo(){
+        return UserInfoHolder.instance;
+    }
+
     // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private boolean hasId;
-    private String id_ = "123";
+    private String id_ = "10010";
     public String getId() { return id_; }
     public boolean hasId() { return hasId; }
     public UserInfo setId(String value) {
@@ -4704,7 +4712,7 @@ public final class MessageProtos {
     // required string nick_name = 3;
     public static final int NICK_NAME_FIELD_NUMBER = 3;
     private boolean hasNickName;
-    private String nickName_ = "hello";
+    private String nickName_ = "冉小强";
     public String getNickName() { return nickName_; }
     public boolean hasNickName() { return hasNickName; }
     public UserInfo setNickName(String value) {
@@ -4721,7 +4729,7 @@ public final class MessageProtos {
     // required int32 sex = 4;
     public static final int SEX_FIELD_NUMBER = 4;
     private boolean hasSex;
-    private int sex_ = 0;
+    private int sex_ = 1;
     public int getSex() { return sex_; }
     public boolean hasSex() { return hasSex; }
     public UserInfo setSex(int value) {
@@ -4738,7 +4746,7 @@ public final class MessageProtos {
     // required int32 age = 5;
     public static final int AGE_FIELD_NUMBER = 5;
     private boolean hasAge;
-    private int age_ = 0;
+    private int age_ = 25;
     public int getAge() { return age_; }
     public boolean hasAge() { return hasAge; }
     public UserInfo setAge(int value) {
@@ -4755,7 +4763,7 @@ public final class MessageProtos {
     // required string weixin = 6;
     public static final int WEIXIN_FIELD_NUMBER = 6;
     private boolean hasWeixin;
-    private String weixin_ = "";
+    private String weixin_ = "wolfboy01";
     public String getWeixin() { return weixin_; }
     public boolean hasWeixin() { return hasWeixin; }
     public UserInfo setWeixin(String value) {
@@ -4765,14 +4773,14 @@ public final class MessageProtos {
     }
     public UserInfo clearWeixin() {
       hasWeixin = false;
-      weixin_ = "";
+      weixin_ = "skiace_kevin";
       return this;
     }
     
     // required string qq = 7;
     public static final int QQ_FIELD_NUMBER = 7;
     private boolean hasQq;
-    private String qq_ = "10001";
+    private String qq_ = "807605294";
     public String getQq() { return qq_; }
     public boolean hasQq() { return hasQq; }
     public UserInfo setQq(String value) {

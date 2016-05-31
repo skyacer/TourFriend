@@ -14,8 +14,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -27,6 +25,8 @@ import com.elong.tourpal.R;
 import com.elong.tourpal.application.Actions;
 import com.elong.tourpal.application.Env;
 import com.elong.tourpal.application.Extras;
+import com.elong.tourpal.db.DBManagerClient;
+import com.elong.tourpal.model.TourPostData;
 import com.elong.tourpal.net.Request;
 import com.elong.tourpal.net.RequestBuilder;
 import com.elong.tourpal.protocal.MessageProtos;
@@ -35,10 +35,13 @@ import com.elong.tourpal.support.stat.StatisticsEnv;
 import com.elong.tourpal.ui.supports.PostListAdapter;
 import com.elong.tourpal.ui.views.CommonToastDialog;
 import com.elong.tourpal.ui.views.EmptyView;
+import com.elong.tourpal.utils.StringUtils;
 import com.elong.tourpal.utils.Utils;
 import com.google.protobuf.micro.InvalidProtocolBufferMicroException;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
@@ -124,7 +127,8 @@ public class PostListActivity extends ActivityBase {
 
     /**
      * 根据用户id来选择用户点赞的帖子，若为空，则选择本设备已登录的用户点赞的帖子
-     * @param c context
+     *
+     * @param c           context
      * @param userInfoStr 用户id
      */
     public static void startActivityForUserJoinedPosts(Context c, String userInfoStr) {
@@ -348,51 +352,54 @@ public class PostListActivity extends ActivityBase {
             if (context != null) {
                 Bundle data = msg.getData();
                 switch (msg.what) {
-                    case WHAT_GET_POSTS_LIST:
-                        if (!Utils.isNetworkConnected(context)) {
-                            Toast.makeText(context, R.string.network_disable, Toast.LENGTH_SHORT).show();
-                            break;
-                        }
-                        //联网请求帖子数据
-                        int numPerPage = data.getInt("numPerPage");
-                        final int startOffset = data.getInt("startOffset");
-                        Request getPostReq = null;
-                        if (context.mType == TYPE_POSTS_SELECT_BY_DEST) {
-                            getPostReq = RequestBuilder.buildGetPostByDestRequest(startOffset, numPerPage, context.mDestination);
-                        } else if (context.mType == TYPE_POSTS_SELECT_BY_USER) {
-                            String uid = context.mOtherUserInfo == null ? null : context.mOtherUserInfo.getId();
-                            getPostReq = RequestBuilder.buildGetPostByUserRequest(startOffset, numPerPage, uid);
-                        } else if (context.mType == TYPE_POSTS_SELECT_BY_USER_JOINED) {
-                            String uid = context.mOtherUserInfo == null ? null : context.mOtherUserInfo.getId();
-                            getPostReq = RequestBuilder.buildGetJoinedPostByUserRequest(startOffset, numPerPage, uid);
-                        }
-                        if (getPostReq != null) {
-                            MessageProtos.ResponseInfo respInfo = getPostReq.get();
-                            if (respInfo != null && respInfo.getErrCode() == MessageProtos.SUCCESS) {
-                                final MessageProtos.PostResponseInfoList pril = respInfo.getPostInfoList();
-                                if (pril != null) {
-                                    context.mUIHandler.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            MessageProtos.PageResponseInfo pri = pril.getPageResponseInfo();
-                                            context.mCanFetchNextPage = pri.getHasRest();
-                                            if (startOffset <= 0) {
-                                                context.mPostListAdapter.setDatas(pril.getPostInfosList());
-                                            } else {
-                                                context.mPostListAdapter.addDatas(pril.getPostInfosList());
-                                            }
-                                            //记录上次结束的偏移
-                                            context.mCurrentOffset = pri.getEndOffset();
-                                            if (!context.mUIHandler.hasMessages(WHAT_REFRESH_POSTS_LIST)) {
-                                                context.mUIHandler.sendEmptyMessage(WHAT_REFRESH_POSTS_LIST);
-                                            }
-                                        }
-                                    });
-                                }
+                    case WHAT_GET_POSTS_LIST: {
+                        MessageProtos.ResponseInfo respInfo = new MessageProtos.ResponseInfo();
+
+                        MessageProtos.PostResponseInfoList postResponseInfoList
+                                = new MessageProtos.PostResponseInfoList();
+
+                        ArrayList<TourPostData> tourDataList = DBManagerClient.queryAllTourPostData();
+                        if (tourDataList != null) {
+                            for (TourPostData d : tourDataList) {
+                                MessageProtos.PostResponseInfo postResponseInfo = new MessageProtos.PostResponseInfo();
+                                postResponseInfo.setUserInfo(MessageProtos.UserInfo.getUserInfo());
+                                postResponseInfo.setPhone(d.mPhone);
+                                postResponseInfo.setStartTime(d.mStartTime.get(Calendar.MONTH)+"-"+d.mStartTime.get(Calendar.DAY_OF_MONTH));
+                                postResponseInfo.setDays((d.mEndTime.get(Calendar.DAY_OF_MONTH)-d.mStartTime.get(Calendar.DAY_OF_MONTH))+"");
+                                postResponseInfo.setQq(d.mQQ);
+                                postResponseInfo.setDest(StringUtils.spliteUnderLine(d.mDestinationAndIds.get(0))[1]);
+                                postResponseInfo.setContent(d.mDetail);
+                                postResponseInfoList.addPostInfos(postResponseInfo);
                             }
                         }
-                        context.mUIHandler.sendEmptyMessage(WHAT_REFRESH_POSTS_LIST);
-                        break;
+
+                        respInfo.setPostInfoList(postResponseInfoList);
+
+                        final MessageProtos.PostResponseInfoList pril = respInfo.getPostInfoList();
+                        if (pril != null) {
+                            context.mUIHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+//                                            MessageProtos.PageResponseInfo pri = pril.getPageResponseInfo();
+//                                            context.mCanFetchNextPage = pri.getHasRest();
+//                                            if (startOffset <= 0) {
+                                    context.mPostListAdapter.setDatas(pril.getPostInfosList());
+//                                            } else {
+//                                                context.mPostListAdapter.addDatas(pril.getPostInfosList());
+//                                            }
+                                    //记录上次结束的偏移
+//                                            context.mCurrentOffset = pri.getEndOffset();
+                                    if (!context.mUIHandler.hasMessages(WHAT_REFRESH_POSTS_LIST)) {
+                                        context.mUIHandler.sendEmptyMessage(WHAT_REFRESH_POSTS_LIST);
+                                    }
+                                }
+                            });
+                        }
+//                            }
+                    }
+
+                    context.mUIHandler.sendEmptyMessage(WHAT_REFRESH_POSTS_LIST);
+                    break;
                     case WHAT_SEND_WANNA_JOIN:
                         int reqState = data.getInt("state");
                         final String postId = data.getString("postId");

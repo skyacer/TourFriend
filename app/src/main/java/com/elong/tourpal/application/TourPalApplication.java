@@ -43,7 +43,7 @@ public class TourPalApplication extends Application {
         regToWx();
         mQQapi = Tencent.createInstance(QQ_APP_ID, this);
 
-        MessageProtos.UserInfo userInfo = new MessageProtos.UserInfo();
+        MessageProtos.UserInfo userInfo = MessageProtos.UserInfo.getUserInfo();
         SharedPref.getInstance().setMyUserInfo(userInfo);
 
         // 初始化帖子标签数据
