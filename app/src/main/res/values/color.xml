@@ -151,4 +151,7 @@
     <!--分享-->
     <color name="share_dialog_text">#828282</color>
 
+    <!--登录-->
+    <color name="mona_lisa">#FF9288</color>
+    <color name="flamingo">#EA5E50</color>
 </resources>

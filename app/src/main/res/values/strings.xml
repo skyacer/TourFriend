@@ -30,6 +30,8 @@
     <string name="somebodys_format">%1$s的%2$s</string>
     <string name="camera">相机</string>
     <string name="login">登录</string>
+    <string name="login_add_new_account">注册新用户</string>
+    <string name="login_add_new_account_login">注册并登陆</string>
     <string name="elong_login">艺龙会员登录</string>
     <string name="login_succeed">登录成功</string>
     <string name="login_failed">登录失败</string>
@@ -43,6 +45,17 @@
     <string name="tp_m_title">首页</string>
     <string name="tp_m_search_text">搜索&#160;地点&#160;景区</string>
     <string name="tp_m_hot_dest">热门目的地</string>
+    
+    <!--登录-->
+    <string name="login_account_hint">账号</string>
+    <string name="login_password_hint">密码</string>
+    <string name="login_title">登录</string>
+
+    <!--注册-->
+    <string name="add_new_acount_hint">请输入账号</string>
+    <string name="add_new_passwd_hint">请输入密码</string>
+    <string name="add_new_passwd_again_hint">请再次输入密码</string>
+    <string name="add_new_passwd_title">注册</string>
 
     <!--消息-->
     <string name="tp_msg_title">消息</string>
@@ -259,6 +272,8 @@
     <string name="eci_toast_enter_phone_before_check">输入手机后，才能开启哦</string>
 
     <string name="sans_serif" translatable="false">sans-serif</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_add_new_account">AddNewAccountActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_edit_user_info">EditUserInfoActivity</string>
     <string name="title_activity_personal_center">PersonalCenterActivity</string>

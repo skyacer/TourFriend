@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.elong.tourpal.ui.views.CommonTitleBar
+        android:id="@+id/login_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:lines="1"
+        android:hint="@string/add_new_acount_hint"
+        android:layout_marginLeft="@dimen/size_15dp"
+        android:layout_marginRight="@dimen/size_15dp"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:lines="1"
+        android:hint="@string/add_new_passwd_hint"
+        android:inputType="textPassword"
+        android:layout_marginLeft="@dimen/size_15dp"
+        android:layout_marginRight="@dimen/size_15dp"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:lines="1"
+        android:hint="@string/add_new_passwd_again_hint"
+        android:inputType="textPassword"
+        android:layout_marginLeft="@dimen/size_15dp"
+        android:layout_marginRight="@dimen/size_15dp"
+    />
+
+    <include
+        android:id="@+id/item_add_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_54dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        layout="@layout/item_add_new_acount_button"
+        android:layout_marginLeft="@dimen/size_15dp"
+        android:layout_marginRight="@dimen/size_15dp"
+    />
+</LinearLayout>

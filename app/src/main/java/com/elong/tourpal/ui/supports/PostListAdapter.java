@@ -19,7 +19,7 @@ import com.elong.tourpal.support.stat.Statistics;
 import com.elong.tourpal.support.stat.StatisticsEnv;
 import com.elong.tourpal.ui.activities.EditContactInfoActivity;
 import com.elong.tourpal.ui.activities.GalleryActivity;
-import com.elong.tourpal.ui.activities.LoginWebviewActivity;
+import com.elong.tourpal.ui.activities.LoginActivity;
 import com.elong.tourpal.ui.activities.PersonalCenterActivity;
 import com.elong.tourpal.ui.views.CommonDialog;
 import com.elong.tourpal.ui.views.RelativeGridLayout;
@@ -212,7 +212,7 @@ public class PostListAdapter extends BaseAdapter {
                                 }
                             } else {
                                 //未登录，跳转到登录页面，让用户登录
-                                Intent intent = new Intent(context, LoginWebviewActivity.class);
+                                Intent intent = new Intent(context, LoginActivity.class);
                                 context.startActivity(intent);
                             }
                         }

@@ -41,7 +41,7 @@ import com.elong.tourpal.search.DestinationDataManager;
 import com.elong.tourpal.search.DestinationSearchManager;
 import com.elong.tourpal.support.stat.Statistics;
 import com.elong.tourpal.support.stat.StatisticsEnv;
-import com.elong.tourpal.ui.activities.LoginWebviewActivity;
+import com.elong.tourpal.ui.activities.LoginActivity;
 import com.elong.tourpal.ui.activities.PostingTourActivity;
 import com.elong.tourpal.ui.supports.SearchDestinationAdapter;
 import com.elong.tourpal.ui.supports.TagsGridAdapter;
@@ -152,7 +152,7 @@ public class PostingTourFragment extends Fragment implements View.OnTouchListene
 
                 if (!TourPalApplication.getInstance().hasLogin()) {
                     //未登录，跳转到登录页面，让用户登录
-                    Intent intent = new Intent(getActivity(), LoginWebviewActivity.class);
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
                 } else {
                     postTourPlan();

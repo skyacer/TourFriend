@@ -212,7 +212,7 @@ public class MainTabsActivity extends ActivityBase {
                     case IDX_MSG:
                         if (!TourPalApplication.getInstance().hasLogin()) {
                             //若没登录，则直接跳转到登录页面
-                            Intent intent = new Intent(MainTabsActivity.this, LoginWebviewActivity.class);
+                            Intent intent = new Intent(MainTabsActivity.this, LoginActivity.class);
                             startActivity(intent);
                         }
                         break;

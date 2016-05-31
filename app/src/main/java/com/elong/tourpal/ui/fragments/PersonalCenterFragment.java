@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,7 +26,7 @@ import com.elong.tourpal.support.stat.Statistics;
 import com.elong.tourpal.support.stat.StatisticsEnv;
 import com.elong.tourpal.ui.activities.AlbumActivity;
 import com.elong.tourpal.ui.activities.EditUserInfoActivity;
-import com.elong.tourpal.ui.activities.LoginWebviewActivity;
+import com.elong.tourpal.ui.activities.LoginActivity;
 import com.elong.tourpal.ui.activities.PersonalCenterActivity;
 import com.elong.tourpal.ui.activities.PostListActivity;
 import com.elong.tourpal.ui.activities.SettingsActivity;
@@ -157,7 +156,7 @@ public class PersonalCenterFragment extends FragmentBase4Pager{
                 //打点数据
                 Statistics.log(getActivity().getApplicationContext(), StatisticsEnv.USERCENTER_LOGIN_PRESS);
 
-                Intent intent = new Intent(getActivity(), LoginWebviewActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -325,7 +324,7 @@ public class PersonalCenterFragment extends FragmentBase4Pager{
 
             if (jump2Login){
                 //未登录则直接跳去登录页面
-                Intent loginIntent = new Intent(getActivity(), LoginWebviewActivity.class);
+                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(loginIntent);
                 return;
             }

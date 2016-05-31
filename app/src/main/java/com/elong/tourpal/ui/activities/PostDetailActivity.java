@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +45,6 @@ import com.google.protobuf.micro.InvalidProtocolBufferMicroException;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PostDetailActivity extends ActivityBase {
@@ -264,7 +262,7 @@ public class PostDetailActivity extends ActivityBase {
                                 }
                             } else {
                                 //未登录跳转到登录界面
-                                Intent intent = new Intent(PostDetailActivity.this, LoginWebviewActivity.class);
+                                Intent intent = new Intent(PostDetailActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             }
                         }
@@ -301,7 +299,7 @@ public class PostDetailActivity extends ActivityBase {
                     dlg.setRightBtnOnclickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(PostDetailActivity.this, LoginWebviewActivity.class);
+                            Intent intent = new Intent(PostDetailActivity.this, LoginActivity.class);
                             startActivity(intent);
                         }
                     });
@@ -379,7 +377,7 @@ public class PostDetailActivity extends ActivityBase {
                     }
                 } else {
                     //未登录跳转到登录界面
-                    Intent intent = new Intent(PostDetailActivity.this, LoginWebviewActivity.class);
+                    Intent intent = new Intent(PostDetailActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
             }
