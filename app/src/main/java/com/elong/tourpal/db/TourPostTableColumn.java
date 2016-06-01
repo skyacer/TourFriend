@@ -3,7 +3,7 @@ package com.elong.tourpal.db;
 /**
  * Created by LuoChangAn on 16/5/29.
  */
-public class TourPostTableColum {
+public class TourPostTableColumn {
     static final String COL_TOURPOST_ID = "tour_id";
     static final String COL_TOURPOST_STARTTIME = "tour_starttime";
     static final String COL_TOURPOST_ENDTIME = "tour_endtime";

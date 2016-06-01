@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.util.Log;
 
 import com.elong.tourpal.application.Env;
+import com.elong.tourpal.model.AccountsInfo;
 import com.elong.tourpal.model.TourPostData;
 import com.elong.tourpal.search.DestinationDataManager;
 import com.elong.tourpal.utils.TimeUtils;
@@ -69,17 +70,17 @@ public class DBManagerClient {
         ArrayList<ContentValues> valuesList = new ArrayList<ContentValues>();
         ContentValues values = new ContentValues();
         if (data.mDestinationAndIds.get(0)!=null) {
-            values.put(TourPostTableColum.COL_TOURPOST_ID, data.mDestinationAndIds.get(0));
+            values.put(TourPostTableColumn.COL_TOURPOST_ID, data.mDestinationAndIds.get(0));
         }
-        values.put(TourPostTableColum.COL_TOURPOST_STARTTIME,sf.format(data.mStartTime.getTime()));
-        values.put(TourPostTableColum.COL_TOURPOST_ENDTIME,sf.format(data.mEndTime.getTime()));
+        values.put(TourPostTableColumn.COL_TOURPOST_STARTTIME,sf.format(data.mStartTime.getTime()));
+        values.put(TourPostTableColumn.COL_TOURPOST_ENDTIME,sf.format(data.mEndTime.getTime()));
         if (data.mSelectTags.get(0)!=null) {
-            values.put(TourPostTableColum.COL_TOURPOST_TAG, data.mSelectTags.get(0));
+            values.put(TourPostTableColumn.COL_TOURPOST_TAG, data.mSelectTags.get(0));
         }
-        values.put(TourPostTableColum.COL_TOURPOST_WX,data.mWeixin);
-        values.put(TourPostTableColum.COL_TOURPOST_QQ,data.mQQ);
-        values.put(TourPostTableColum.COL_TOURPOST_PHONE,data.mPhone);
-        values.put(TourPostTableColum.COL_TOURPOST_DETAIL,data.mDetail);
+        values.put(TourPostTableColumn.COL_TOURPOST_WX,data.mWeixin);
+        values.put(TourPostTableColumn.COL_TOURPOST_QQ,data.mQQ);
+        values.put(TourPostTableColumn.COL_TOURPOST_PHONE,data.mPhone);
+        values.put(TourPostTableColumn.COL_TOURPOST_DETAIL,data.mDetail);
         valuesList.add(values);
         DBManager.getInstance().batchInsert(DBHelper.TABLE_NAME_TOURPOST,null,valuesList);
 
@@ -90,7 +91,46 @@ public class DBManagerClient {
         return 0;
     }
 
+    /**
+     * 插入账号信息
+     * @param info
+     * @return
+     */
+    public static int insertAccounts(AccountsInfo info){
+        if (info == null){
+            return -1;
+        }
+        ArrayList<ContentValues> valuesList = new ArrayList<>();
+        ContentValues values = new ContentValues();
+        values.put(AccountsTableColumn.COL_ACCOUNTS_NAME,info.mAccounts);
+        values.put(AccountsTableColumn.COL_ACCOUNTS_PASSWORD,info.mPassword);
+        valuesList.add(values);
+        DBManager.getInstance().batchInsert(DBHelper.TABLE_NAME_ACCOUNT,null,valuesList);
+        return 0;
+    }
 
+    /**
+     * 判断账号是否存在
+     * @param info
+     * @return
+     */
+    public static boolean ifAccountsExist(AccountsInfo info){
+        if (info == null){
+            return false;
+        }
+        String[] cloumns = new String[]{AccountsTableColumn.COL_ACCOUNTS_ID, AccountsTableColumn.COL_ACCOUNTS_NAME,
+        AccountsTableColumn.COL_ACCOUNTS_PASSWORD};
+        Cursor c = DBManager.getInstance().select(DBHelper.TABLE_NAME_ACCOUNT,cloumns,null,null,null,null,
+                AccountsTableColumn.COL_ACCOUNTS_ID);
+        while (c.moveToNext()) {
+            String name = c.getString(c.getColumnIndex(AccountsTableColumn.COL_ACCOUNTS_NAME));
+            String passwd = c.getString(c.getColumnIndex(AccountsTableColumn.COL_ACCOUNTS_PASSWORD));
+            if (info.mAccounts.equals(name) && info.mPassword.equals(passwd)){
+                return true;
+            }
+        }
+            return false;
+    }
 
     public static boolean updateAllDesData(List<DestinationDataManager.DestinationOrigData> data) {
         if (data == null) {
@@ -125,25 +165,29 @@ public class DBManagerClient {
         return (count == successCount);
     }
 
+    /**
+     * 查询所有的发帖信息
+     * @return
+     */
     public static ArrayList<TourPostData> queryAllTourPostData(){
-        String[] cloumns = new String[]{TourPostTableColum.COL_TOURPOST_ID,TourPostTableColum.COL_TOURPOST_STARTTIME,
-        TourPostTableColum.COL_TOURPOST_ENDTIME,TourPostTableColum.COL_TOURPOST_TAG,
-        TourPostTableColum.COL_TOURPOST_WX,TourPostTableColum.COL_TOURPOST_QQ,
-        TourPostTableColum.COL_TOURPOST_PHONE,TourPostTableColum.COL_TOURPOST_DETAIL};
+        String[] cloumns = new String[]{TourPostTableColumn.COL_TOURPOST_ID, TourPostTableColumn.COL_TOURPOST_STARTTIME,
+        TourPostTableColumn.COL_TOURPOST_ENDTIME, TourPostTableColumn.COL_TOURPOST_TAG,
+        TourPostTableColumn.COL_TOURPOST_WX, TourPostTableColumn.COL_TOURPOST_QQ,
+        TourPostTableColumn.COL_TOURPOST_PHONE, TourPostTableColumn.COL_TOURPOST_DETAIL};
         Cursor c = DBManager.getInstance().select(DBHelper.TABLE_NAME_TOURPOST,cloumns,null,null,null,null,
-                TourPostTableColum.COL_TOURPOST_ID);
+                TourPostTableColumn.COL_TOURPOST_ID);
         ArrayList<TourPostData> tourPostDataList = new ArrayList<>();
 
         while (c.moveToNext()){
             TourPostData data = new TourPostData();
-            String id = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_ID));
-            String startTime = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_STARTTIME));
-            String endTime = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_ENDTIME));
-            String tag = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_TAG));
-            String wx = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_WX));
-            String qq = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_QQ));
-            String phone = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_PHONE));
-            String detail = c.getString(c.getColumnIndex(TourPostTableColum.COL_TOURPOST_DETAIL));
+            String id = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_ID));
+            String startTime = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_STARTTIME));
+            String endTime = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_ENDTIME));
+            String tag = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_TAG));
+            String wx = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_WX));
+            String qq = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_QQ));
+            String phone = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_PHONE));
+            String detail = c.getString(c.getColumnIndex(TourPostTableColumn.COL_TOURPOST_DETAIL));
 
             data.mDestinationAndIds.add(id);
             data.mSelectTags.add(tag);

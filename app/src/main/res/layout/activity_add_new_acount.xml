@@ -8,6 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:id="@+id/add_new_account_name_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
         android:lines="1"
@@ -17,6 +18,7 @@
     />
 
     <EditText
+        android:id="@+id/add_new_password_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
         android:lines="1"
@@ -26,6 +28,7 @@
         android:layout_marginRight="@dimen/size_15dp"
     />
     <EditText
+        android:id="@+id/add_new_password_again_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
         android:lines="1"

@@ -2,6 +2,7 @@ package com.elong.tourpal.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.elong.tourpal.module.file.TagsFileManager;
 import com.elong.tourpal.protocal.MessageProtos;
@@ -19,7 +20,7 @@ public class TourPalApplication extends Application {
 
     private static TourPalApplication sInstance;
 
-    private boolean mHasLogin = false;
+    public static boolean mHasLogin = false;
 
     private static final String WECHAT_APP_ID = "wxd6fb3bb381c0f8f5";
     private static final String QQ_APP_ID = "1104524037";
@@ -59,12 +60,12 @@ public class TourPalApplication extends Application {
      * 获取本地登录信息，粗略判断是否登录
      */
     private void initLoginState(){
-//        SharedPref pref = SharedPref.getInstance();
-//        if (!TextUtils.isEmpty(pref.getSessionId()) && !TextUtils.isEmpty(pref.getSessionId())){
-//            mHasLogin = true;
-//        } else {
-//            mHasLogin = true;
-//        }
+        SharedPref pref = SharedPref.getInstance();
+        if (!TextUtils.isEmpty(pref.getSessionId())){
+            mHasLogin = true;
+        } else {
+            mHasLogin = true;
+        }
     }
 
     /**

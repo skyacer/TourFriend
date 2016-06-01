@@ -13,6 +13,7 @@ class DBHelper extends SQLiteOpenHelper {
     static final String COL_SELF_ID = "_id";
     static final String TABLE_NAME_DESTINATION = "destinations";
     static final String TABLE_NAME_TOURPOST = "tourpost";
+    static final String TABLE_NAME_ACCOUNT = "accounts";
 
     private static final String CREATE_DESTINATION_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_DESTINATION
             + " (" + COL_SELF_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -22,16 +23,21 @@ class DBHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TOURPOST_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TOURPOST
             + " (" + COL_SELF_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TourPostTableColum.COL_TOURPOST_ID + " INTEGER NOT NULL, " + TourPostTableColum.COL_TOURPOST_STARTTIME + " TEXT, "
-            + TourPostTableColum.COL_TOURPOST_ENDTIME + " TEXT, " + TourPostTableColum.COL_TOURPOST_TAG + " TEXT, "
-            + TourPostTableColum.COL_TOURPOST_WX + " TEXT, " + TourPostTableColum.COL_TOURPOST_QQ + " TEXT,"
-            + TourPostTableColum.COL_TOURPOST_PHONE + " TEXT, " + TourPostTableColum.COL_TOURPOST_DETAIL + " TEXT);";
+            + TourPostTableColumn.COL_TOURPOST_ID + " INTEGER NOT NULL, " + TourPostTableColumn.COL_TOURPOST_STARTTIME + " TEXT, "
+            + TourPostTableColumn.COL_TOURPOST_ENDTIME + " TEXT, " + TourPostTableColumn.COL_TOURPOST_TAG + " TEXT, "
+            + TourPostTableColumn.COL_TOURPOST_WX + " TEXT, " + TourPostTableColumn.COL_TOURPOST_QQ + " TEXT,"
+            + TourPostTableColumn.COL_TOURPOST_PHONE + " TEXT, " + TourPostTableColumn.COL_TOURPOST_DETAIL + " TEXT);";
 
+    private static final String CREATE_ACCOUNTS ="CREATE TABLE IF NOT EXISTS " + TABLE_NAME_ACCOUNT
+            + " (" + AccountsTableColumn.COL_ACCOUNTS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + AccountsTableColumn.COL_ACCOUNTS_NAME + " TEXT, "
+            + AccountsTableColumn.COL_ACCOUNTS_PASSWORD + " TEXT);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_DESTINATION_TABLE);
         db.execSQL(CREATE_TOURPOST_TABLE);
+        db.execSQL(CREATE_ACCOUNTS);
     }
 
     @Override

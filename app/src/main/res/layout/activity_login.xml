@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:id="@+id/login_name_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
         android:lines="1"
@@ -19,6 +20,7 @@
     />
 
     <EditText
+        android:id="@+id/login_passwd_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
         android:lines="1"
