@@ -52,6 +52,7 @@ public class AddNewAccountActivity extends ActionBarActivity implements View.OnC
                         ToastUtil.makeShortToast(R.string.add_new_passwd_not_same);
                     }else {
                         register();
+                        ToastUtil.makeShortToast(R.string.add_new_passwd_success);
                         finish();
                     }
                 }else {

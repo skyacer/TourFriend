@@ -52,6 +52,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                     }else {
                         SharedPref.getInstance().setSessionId("123");
                         TourPalApplication.mHasLogin = true;
+                        ToastUtil.makeShortToast(R.string.login_success);
                         finish();
                     }
                 }else {

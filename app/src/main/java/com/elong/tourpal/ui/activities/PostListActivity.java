@@ -369,7 +369,13 @@ public class PostListActivity extends ActivityBase {
                                 postResponseInfo.setQq(d.mQQ);
                                 postResponseInfo.setDest(StringUtils.spliteUnderLine(d.mDestinationAndIds.get(0))[1]);
                                 postResponseInfo.setContent(d.mDetail);
-                                postResponseInfoList.addPostInfos(postResponseInfo);
+                                if (context.mType == TYPE_POSTS_SELECT_BY_DEST){
+                                    if (postResponseInfo.getDest().equals(context.mDestination)){
+                                        postResponseInfoList.addPostInfos(postResponseInfo);
+                                    }
+                                }else {
+                                    postResponseInfoList.addPostInfos(postResponseInfo);
+                                }
                             }
                         }
 
@@ -380,15 +386,8 @@ public class PostListActivity extends ActivityBase {
                             context.mUIHandler.post(new Runnable() {
                                 @Override
                                 public void run() {
-//                                            MessageProtos.PageResponseInfo pri = pril.getPageResponseInfo();
-//                                            context.mCanFetchNextPage = pri.getHasRest();
-//                                            if (startOffset <= 0) {
-                                    context.mPostListAdapter.setDatas(pril.getPostInfosList());
-//                                            } else {
-//                                                context.mPostListAdapter.addDatas(pril.getPostInfosList());
-//                                            }
-                                    //记录上次结束的偏移
-//                                            context.mCurrentOffset = pri.getEndOffset();
+                                        context.mPostListAdapter.setDatas(pril.getPostInfosList());
+
                                     if (!context.mUIHandler.hasMessages(WHAT_REFRESH_POSTS_LIST)) {
                                         context.mUIHandler.sendEmptyMessage(WHAT_REFRESH_POSTS_LIST);
                                     }
